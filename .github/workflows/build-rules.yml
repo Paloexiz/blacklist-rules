@@ -1,0 +1,57 @@
+name: Build Rules
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "rule_sources/**"
+      - "workflow_scripts/build_rules.py"
+      - "artifact/**"
+      - ".github/workflows/build-rules.yml"
+  pull_request:
+    paths:
+      - "rule_sources/**"
+      - "workflow_scripts/build_rules.py"
+      - "artifact/**"
+      - ".github/workflows/build-rules.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Verify generated rules in pull requests
+        if: ${{ github.event_name == 'pull_request' }}
+        run: python workflow_scripts/build_rules.py --check
+
+      - name: Build generated rules
+        if: ${{ github.event_name != 'pull_request' }}
+        run: python workflow_scripts/build_rules.py
+
+      - name: Commit generated rules
+        if: ${{ github.event_name != 'pull_request' }}
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain -- artifact)" ]; then
+            echo "Generated rules are already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add artifact
+          git commit -m "chore: build rules"
+          git push

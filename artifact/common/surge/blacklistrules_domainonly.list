@@ -1,0 +1,166 @@
+# /*ApplicationService*/
+# bootstrapcdn
+maxcdn.bootstrapcdn.com
+# captcha
+.octocaptcha.com
+# google
+cable.ua5v.com
+doodles.google
+enclave.ua5v.com
+h5games.usercontent.goog
+# jotform
+.jotform.com
+# mozilla
+addons.mozilla.org
+api.accounts.firefox.com
+detectportal.firefox.com
+graphql.accounts.firefox.com
+oauth.accounts.firefox.com
+# surveycake
+.surveycake.com
+# visualstudiocode
+gallerycdn.vsassets.io
+# zettlr
+.zettlr.com
+# /*Blog*/
+# acggw
+.acggw.club
+# v2rayssr
+.v2rayssr.com
+# /*CloudStorage*/
+# buzzheavier
+.buzzheavier.com
+# /*Forum*/
+# nodeseek
+.nodeseek.com
+# /*Game*/
+# cooking mama: let's cook!
+assets.app-ofcr.net
+# cravesaga-jp
+gg-client-w.crave-saga.net
+gg-resource.crave-saga.net
+gg-server.crave-saga.net
+# cravesaga-tw
+d1nuibj2c6a6xf.cloudfront.net
+d2nk6ypjbnrzgg.cloudfront.net
+# housamo
+elb.housamo.jp
+# mariorun
+api.supermariorun.com
+# mbga
+.pazuani.net
+# pjsekai
+app.adjust.world
+game-version.sekai.colorfulpalette.org
+production-cf2d2388-assetbundle-info.sekai.colorfulpalette.org
+production-cf2d2388-assetbundle.sekai.colorfulpalette.org
+production-game-api.sekai.colorfulpalette.org
+# pokemmo
+loginserver.pokemmo.com
+loginserver.sea.pokemmo.com
+# pokemonhome
+resource.pokemon-home.com
+twinnrhhblenxjgd.pokemon-home.com
+# pokemonmasters
+# 3b8d4a717682c1cc5839b50bc93667cf.baas.nintendo.com
+# pokemonunite
+gamesvr1.pokemon-unitepgame.com
+gcloud.pokemon-unitepgame.com
+image.pokemon-unitepgame.com
+# tamacolle
+.nijitama.app
+.tukitama.com
+# /*LandingPage*/
+tndk0011.netlify.app
+# /*Media*/
+# apple-shazam
+.shazam.com
+# colamanga
+.colamanga.com
+# instalker
+.instalker.org
+# twicopy
+.twicopy.com
+# wallheaven
+.wallheaven.cc
+# z-library
+.z-library.sk
+# /*NetworkProvider*/
+# domesticToOverseaService - as you see, chicken farms
+.bityun.co
+.tntyun.xyz
+.tntv2.shop
+.justmysocks2.net
+board.fmta.boo
+amz.fmta.boo
+smart.fmta.boo
+.shanhai.me
+my.recmata.net
+.nordcdn.com
+.equaldcdn.com
+# /*SoftwareMarket*/
+# apkcombo
+.apkcombo.app
+.apkflash.com
+cdn.apkflash.net
+cdn.androidcombo.com
+# erolab
+.ero-labs.com
+# f-droid
+.f-droid.org
+ftp.agdsn.de
+ftp.fau.de
+ftp.gwdg.de
+mirror.kumi.systems
+mirror.ossplanet.net
+# steam
+store.fastly.steamstatic.com
+# /*SoftwareProvider*/
+# bitcomet
+.download.bitcomet.com
+# datronicsoft
+.datronicsoft.de
+# navicat
+download3.navicat.com
+# spacedesk
+.spacedesk.net
+# /*Tool*/
+# dnsLeakTest
+.browserleaks.com
+.browserleaks.net
+.browserleaks.org
+.dnsleaktest.com
+.ipleak.net
+.surfsharkdns.com
+.whoer.net
+# follow
+api.follow.is
+openpanel.follow.is
+webp.follow.is
+# hstock
+hstock.s3.eu-central-1.amazonaws.com
+.hstock.org
+# lets-enhance
+cdn.images.letsenhance.io
+# proxy/vpnDetection
+.ping0.cc
+.proxy.888005.xyz
+.proxy.incolumitas.com
+# sms-active
+smsactivate.s3.eu-central-1.amazonaws.com
+.sms-activate.io
+.sms-activate.guru
+# unofficialTwitterResourcesDownloader
+.savetwitter.net
+.twcdn.xyz
+# v2rayseNodeTool
+.v2rayse.com
+# visual-studio-code
+.gallerycdn.vsassets.io
+# /*Wiki*/
+.hiddifynext.com
+matsuridayo.github.io
+wiki.metacubex.one
+.v2raya.org
+# vocaloid-database
+.vocadb.net

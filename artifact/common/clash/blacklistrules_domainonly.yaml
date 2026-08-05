@@ -1,0 +1,167 @@
+payload:
+  # /*ApplicationService*/
+  # bootstrapcdn
+  - maxcdn.bootstrapcdn.com # A CDN platform for loading website resources. Took too long to respond for unknown reason.
+  # captcha
+  - +.octocaptcha.com # Some ISP blocked this domain.
+  # google
+  - cable.ua5v.com # Google Authenticator, authorize passkey by phone/tablet to login a account on another device. Currently Blocked by a firewall you may know.
+  - doodles.google # Currently Blocked by a firewall you may know.
+  - enclave.ua5v.com # Same as "cable.ua5v.com".
+  - h5games.usercontent.goog # Google Play Games. Image Resources Loading.
+  # jotform
+  - +.jotform.com # Free Online Form Builder & Form Creator(described by Official Website).
+  # mozilla
+  - addons.mozilla.org # Some extension is not available in some region.
+  - api.accounts.firefox.com # Account login system for firefox. Took too long to respond for unknown reason sometimes.
+  - detectportal.firefox.com # To detect captive portals on public wifi networks. Took too long to respond for unknown reason sometimes.
+  - graphql.accounts.firefox.com # Account login system for firefox. Took too long to respond for unknown reason sometimes.
+  - oauth.accounts.firefox.com # Account login system for firefox. Took too long to respond for unknown reason sometimes.
+  # surveycake
+  - +.surveycake.com # A website for taking surveys. Currently Blocked by a firewall you may know, maybe.
+  # visualstudiocode
+  - gallerycdn.vsassets.io # Extension Resources Downloading. Some ISP blocked this domain.
+  # zettlr
+  - +.zettlr.com # Currently Blocked by a firewall you may know.
+  # /*Blog*/
+  # acggw
+  - +.acggw.club # A blog for sharing comic & game resources.
+  # v2rayssr
+  - +.v2rayssr.com # Location Verification.
+  # /*CloudStorage*/
+  # buzzheavier
+  - +.buzzheavier.com # The index of this website.
+  # /*Forum*/
+  # nodeseek
+  - +.nodeseek.com # Location Verification.
+  # /*Game*/
+  # cooking mama: let's cook!
+  - assets.app-ofcr.net # Location Verification.
+  # cravesaga-jp
+  - gg-client-w.crave-saga.net # Game Resources Loading.
+  - gg-resource.crave-saga.net # Game Resources Loading.
+  - gg-server.crave-saga.net # Game Resources Loading.
+  # cravesaga-tw
+  - d1nuibj2c6a6xf.cloudfront.net # Game Resources Loading.
+  - d2nk6ypjbnrzgg.cloudfront.net # Game Resources Loading.
+  # housamo
+  - elb.housamo.jp # Game Resources Loading.
+  # mariorun
+  - api.supermariorun.com # Location Verification.
+  # mbga
+  - +.pazuani.net # Game Resources Loading.
+  # pjsekai
+  - app.adjust.world # Game Scene Switching.
+  - game-version.sekai.colorfulpalette.org # Game version check.
+  - production-cf2d2388-assetbundle-info.sekai.colorfulpalette.org # Game Resources Loading.
+  - production-cf2d2388-assetbundle.sekai.colorfulpalette.org # Game Resources Loading.
+  - production-game-api.sekai.colorfulpalette.org # Game Resources Loading.
+  # pokemmo
+  - loginserver.pokemmo.com # Location Verification.
+  - loginserver.sea.pokemmo.com # Location Verification.
+  # pokemonhome
+  - resource.pokemon-home.com # Game Resources Loading.
+  - twinnrhhblenxjgd.pokemon-home.com # Game Resources Loading.
+  # pokemonmasters
+  # - 3b8d4a717682c1cc5839b50bc93667cf.baas.nintendo.com # Location Verification, but this limit has been removed.
+  # pokemonunite
+  - gamesvr1.pokemon-unitepgame.com # Location Verification.
+  - gcloud.pokemon-unitepgame.com # First Page Loading.
+  - image.pokemon-unitepgame.com # Image Resources Loading.
+  # tamacolle
+  - +.nijitama.app # Tamacolle Official Website.
+  - +.tukitama.com # Game Resources Loading.
+  # /*LandingPage*/
+  - tndk0011.netlify.app # A website for advertising "Non-Imitation ~BEA[s]T FREAX 2~" album.
+  # /*Media*/
+  # apple-shazam
+  - +.shazam.com # Recognize music nearby.
+  # colamanga
+  - +.colamanga.com # A comic sharing website. Unlock some invisible resources.
+  # instalker
+  - +.instalker.org # A website for fetching twitter posts.
+  # twicopy
+  - +.twicopy.com # A website for fetching twitter posts.
+  # wallheaven
+  - +.wallheaven.cc # A website for getting wallpapers.
+  # z-library
+  - +.z-library.sk # A book sharing website. Blocked by something for unknown reason.
+  # /*NetworkProvider*/
+  # domesticToOverseaService - as you see, chicken farms
+  - +.bityun.co
+  - +.tntyun.xyz
+  - +.tntv2.shop
+  - +.justmysocks2.net
+  - board.fmta.boo
+  - amz.fmta.boo
+  - smart.fmta.boo
+  - +.shanhai.me
+  - my.recmata.net
+  - +.nordcdn.com
+  - +.equaldcdn.com
+  # /*SoftwareMarket*/
+  # apkcombo
+  - +.apkcombo.app # Location Verification. APKCombo Official Website.
+  - +.apkflash.com # Location Verification. APKCombo Official Website.
+  - cdn.apkflash.net # Location Verification. Software Resources Downloading.
+  - cdn.androidcombo.com # Location Verification. Software Resources Downloading.
+  # erolab
+  - +.ero-labs.com # EROLAB - Online Adult Games.
+  # f-droid
+  - +.f-droid.org # F-Droid Official Website.
+  - ftp.agdsn.de # F-Droid's repository mirror.
+  - ftp.fau.de # F-Droid's repository mirror.
+  - ftp.gwdg.de # F-Droid's repository mirror.
+  - mirror.kumi.systems # F-Droid's repository mirror.
+  - mirror.ossplanet.net # F-Droid's repository mirror.
+  # steam
+  - store.fastly.steamstatic.com # Webpage Loading.
+  # /*SoftwareProvider*/
+  # bitcomet
+  - +.download.bitcomet.com # Download something by this domain.
+  # datronicsoft
+  - +.datronicsoft.de # Some ISP blocked this domain.
+  # navicat
+  - download3.navicat.com # Navicat Premium Software Updating. Blocked by something for unknown reason.
+  # spacedesk
+  - +.spacedesk.net # Spacedesk Official Website, by datronicsoft. Took too long to respond for unknown reason.
+  # /*Tool*/
+  # dnsLeakTest
+  - +.browserleaks.com
+  - +.browserleaks.net
+  - +.browserleaks.org
+  - +.dnsleaktest.com
+  - +.ipleak.net
+  - +.surfsharkdns.com
+  - +.whoer.net
+  # follow
+  - api.follow.is # Resources Loading.
+  - openpanel.follow.is # Resources Loading.
+  - webp.follow.is # Image Resources Loading.
+  # hstock
+  - hstock.s3.eu-central-1.amazonaws.com # Image Resources Loading.
+  - +.hstock.org # Hstock Official Website.
+  # lets-enhance
+  - cdn.images.letsenhance.io # Image Downloading.
+  # proxy/vpnDetection
+  - +.ping0.cc
+  - +.proxy.888005.xyz
+  - +.proxy.incolumitas.com
+  # sms-active
+  - smsactivate.s3.eu-central-1.amazonaws.com # Image Resources Loading.
+  - +.sms-activate.io # SMS-Active Official Website.
+  - +.sms-activate.guru # SMS-Active Official Website.
+  # unofficialTwitterResourcesDownloader
+  - +.savetwitter.net # Website Resources Loading.
+  - +.twcdn.xyz # Image & Video Downloading.
+  # v2rayseNodeTool
+  - +.v2rayse.com # Currently Blocked by a firewall you may know.
+  # visual-studio-code
+  - +.gallerycdn.vsassets.io # Extension Downloading.
+  # /*Wiki*/
+  - +.hiddifynext.com # Hiddify Official Website. Some ISP blocked this domain.
+  - matsuridayo.github.io # Matsuridayo's Official Website. Matsuridayo, a githuber who developed the "nekoray" software. Some ISP blocked this domain.
+  - wiki.metacubex.one # Mihomo Official Wiki. Currently Blocked by a firewall you may know.
+  - +.v2raya.org # v2rayA Official Wiki. Took too long to respond for unknown reason.
+  # vocaloid-database
+  - +.vocadb.net # Official Vocaloid Database.
