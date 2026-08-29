@@ -662,7 +662,7 @@ function main(config) {
       "name": "US Nodes",
       "type": "select",
       "include-all": true,
-      "filter": "(?i)美|us|unitedstates|united states"
+      "filter": "(?i)美国|us|unitedstates|united states"
     },
     {
       ...groupBaseOption,
