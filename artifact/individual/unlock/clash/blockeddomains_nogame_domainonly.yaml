@@ -53,6 +53,8 @@ payload:
   - +.download.bitcomet.com # Download something by this domain.
   # datronicsoft
   - +.datronicsoft.de # Some ISP blocked this domain.
+  # gpsoft
+  - +.gpsoft.com.au # Directory Opus Official Website.
   # navicat
   - download3.navicat.com # Navicat Premium Software Updating. Blocked by something for unknown reason.
   # spacedesk
