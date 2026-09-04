@@ -297,6 +297,12 @@ const ruleProviders = {
     "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml",
     "path": "./ruleset/paloexiz/slowdomains_nogame_domainonly.yaml"
   },
+  "steam": {
+    ...ruleProviderMrs,
+    "behavior": "domain",
+    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Steam/Steam_OCD_Domain.mrs",
+    "path": "./ruleset/peiyingyao/steam.mrs"
+  },
   "copilot_ip": {
     ...ruleProviderMrs,
     "behavior": "ipcidr",
@@ -555,6 +561,7 @@ const rules = [
   "RULE-SET, blacklistrules-security_process, Safe Browse",
   "RULE-SET, blacklistrules-boost_game, Game Boosting",
   "RULE-SET, blacklistrules-boost_nogame, Proxy",
+  "RULE-SET, steam, Steam",
   "RULE-SET, adobeactivation, Adobe Activation Service",
   "RULE-SET, googlefcm, Google FCM",
   "RULE-SET, z-library, Z-Library",
@@ -949,6 +956,13 @@ function main(config) {
       ...groupBaseOption,
       "url": "https://microsoft.com",
       "name": "Microsoft",
+      "type": "select",
+      "proxies": [...defaultDirectGroups]
+    },
+    {
+      ...groupBaseOption,
+      "url": "https://store.steampowered.com",
+      "name": "Steam",
       "type": "select",
       "proxies": [...defaultDirectGroups]
     },
