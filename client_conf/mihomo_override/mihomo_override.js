@@ -901,21 +901,21 @@ function main(config) {
       "url": "https://docker.com",
       "name": "Docker",
       "type": "select",
-      "proxies": [...defaultProxyGroups]
+      "proxies": [...defaultDirectGroups]
     },
     {
       ...groupBaseOption,
       "url": "https://brew.sh",
       "name": "Homebrew",
       "type": "select",
-      "proxies": [...defaultProxyGroups]
+      "proxies": [...defaultDirectGroups]
     },
     {
       ...groupBaseOption,
       "url": "https://www.python.org",
       "name": "Python",
       "type": "select",
-      "proxies": [...defaultProxyGroups]
+      "proxies": [...defaultDirectGroups]
     },
     {
       ...groupBaseOption,

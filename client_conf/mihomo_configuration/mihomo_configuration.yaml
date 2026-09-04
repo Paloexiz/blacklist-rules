@@ -524,7 +524,19 @@ proxy-groups:
       url: "https://docker.com",
       name: Docker,
       type: select,
-      <<: *pr,
+      <<: *dr,
+    }
+  - {
+      url: "https://brew.sh",
+      name: Homebrew,
+      type: select,
+      <<: *dr,
+    }
+  - {
+      url: "https://www.python.org",
+      name: Python,
+      type: select,
+      <<: *dr,
     }
   - {
       url: "https://github.com",
@@ -646,6 +658,8 @@ rules:
   - RULE-SET, aliyun, Aliyun
   - RULE-SET, cloudflare, Cloudflare
   - RULE-SET, docker, Docker
+  - RULE-SET, homebrew, Homebrew
+  - RULE-SET, python, Python
   - RULE-SET, icloud, iCloud
   - RULE-SET, apple, Apple
   - RULE-SET, youtube, Youtube
@@ -873,6 +887,20 @@ rule-providers:
       behavior: domain,
       url: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/docker.mrs",
       path: "./ruleset/metacubex/docker.mrs",
+    }
+  homebrew:
+    {
+      <<: *ruleProviderMrs,
+      behavior: domain,
+      url: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/homebrew.mrs",
+      path: "./ruleset/metacubex/homebrew.mrs",
+    }
+  python:
+    {
+      <<: *ruleProviderMrs,
+      behavior: domain,
+      url: "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/python.mrs",
+      path: "./ruleset/metacubex/python.mrs",
     }
   icloud:
     {

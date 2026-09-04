@@ -2,7 +2,7 @@
 
 **语言选择：[English](README.md) | 简体中文**
 
-版本 2.23。
+版本 2.24。
 
 如果您发现任何问题或有任何建议，可以在这里留言。
 
@@ -52,7 +52,9 @@
 - 技术服务
   - `Aliyun`：默认为 `DIRECT`。
   - `Cloudflare`：默认为 `DIRECT`。
-  - `Docker`：默认为 `Proxy`。
+  - `Docker`：默认为 `DIRECT`。
+  - `Homebrew`：默认为 `DIRECT`。
+  - `Python`：默认为 `DIRECT`。
   - `GitHub`：默认为 `Proxy`。
   - `GitLab`：默认为 `Proxy`。
 - 服务提供商
