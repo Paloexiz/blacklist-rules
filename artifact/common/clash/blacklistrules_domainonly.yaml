@@ -28,6 +28,8 @@ payload:
   - +.acggw.club # A blog for sharing comic & game resources.
   # v2rayssr
   - +.v2rayssr.com # Location Verification.
+  # /*Canon USA*/
+  - +.usa.canon.com # Location Verification.
   # /*CloudStorage*/
   # buzzheavier
   - +.buzzheavier.com # The index of this website.
