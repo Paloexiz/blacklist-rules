@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain": [
+        "jotform.com",
+        "wallheaven.cc",
+        "f-droid.org",
+        "ftp.agdsn.de",
+        "ftp.fau.de",
+        "ftp.gwdg.de",
+        "mirror.kumi.systems",
+        "mirror.ossplanet.net",
+        "api.follow.is",
+        "openpanel.follow.is",
+        "webp.follow.is",
+        "hstock.s3.eu-central-1.amazonaws.com",
+        "hstock.org",
+        "cdn.images.letsenhance.io",
+        "smsactivate.s3.eu-central-1.amazonaws.com",
+        "sms-activate.io",
+        "sms-activate.guru",
+        "savetwitter.net",
+        "twcdn.xyz",
+        "gallerycdn.vsassets.io",
+        "vocadb.net"
+      ],
+      "domain_suffix": [
+        ".jotform.com",
+        ".wallheaven.cc",
+        ".f-droid.org",
+        ".hstock.org",
+        ".sms-activate.io",
+        ".sms-activate.guru",
+        ".savetwitter.net",
+        ".twcdn.xyz",
+        ".gallerycdn.vsassets.io",
+        ".vocadb.net"
+      ]
+    }
+  ]
+}

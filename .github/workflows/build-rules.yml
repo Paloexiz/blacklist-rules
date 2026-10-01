@@ -33,6 +33,9 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Check JSON rule matching semantics
+        run: python workflow_scripts/build_rules.py --self-test
+
       - name: Verify generated rules in pull requests
         if: ${{ github.event_name == 'pull_request' }}
         run: python workflow_scripts/build_rules.py --check

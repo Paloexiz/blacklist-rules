@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain": [
+        "acggw.club",
+        "buzzheavier.com",
+        "bityun.co",
+        "tntyun.xyz",
+        "tntv2.shop",
+        "justmysocks2.net",
+        "board.fmta.boo",
+        "amz.fmta.boo",
+        "smart.fmta.boo",
+        "shanhai.me",
+        "my.recmata.net",
+        "nordcdn.com",
+        "equaldcdn.com",
+        "browserleaks.com",
+        "browserleaks.net",
+        "browserleaks.org",
+        "dnsleaktest.com",
+        "ipleak.net",
+        "surfsharkdns.com",
+        "whoer.net",
+        "ping0.cc",
+        "proxy.888005.xyz",
+        "proxy.incolumitas.com"
+      ],
+      "domain_suffix": [
+        ".acggw.club",
+        ".buzzheavier.com",
+        ".bityun.co",
+        ".tntyun.xyz",
+        ".tntv2.shop",
+        ".justmysocks2.net",
+        ".shanhai.me",
+        ".nordcdn.com",
+        ".equaldcdn.com",
+        ".browserleaks.com",
+        ".browserleaks.net",
+        ".browserleaks.org",
+        ".dnsleaktest.com",
+        ".ipleak.net",
+        ".surfsharkdns.com",
+        ".whoer.net",
+        ".ping0.cc",
+        ".proxy.888005.xyz",
+        ".proxy.incolumitas.com"
+      ]
+    }
+  ]
+}

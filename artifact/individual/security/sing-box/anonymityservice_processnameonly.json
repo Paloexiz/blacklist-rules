@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "process_name": [
+        "lyrebird.exe",
+        "org.torproject.torbrowser",
+        "org.briarproject.briar.android",
+        "org.briarproject.mailbox"
+      ]
+    }
+  ]
+}

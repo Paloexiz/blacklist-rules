@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Build Clash and Surge rule files from neutral .rules sources."""
+"""Build Clash, Surge and JSON rule files from neutral .rules sources."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import ipaddress
+import re
 from collections import OrderedDict
 from dataclasses import dataclass
 from pathlib import Path
@@ -174,6 +176,75 @@ def detect_line_ending(path: Path) -> str:
     return "\r\n" if b"\r\n" in content else "\n"
 
 
+def render_json_rules(items: list[Item]) -> str:
+    fields: dict[str, list[str]] = {}
+
+    def add(field: str, value: str) -> None:
+        values = fields.setdefault(field, [])
+        # ponytail: small source lists keep ordered deduplication simple; add sets if imports grow large.
+        if value not in values:
+            values.append(value)
+
+    for item in items:
+        if not isinstance(item, Rule) or not item.enabled:
+            continue
+        if item.raw.startswith("PROCESS-NAME,"):
+            name = item.raw.partition(",")[2]
+            if not name or any(char in name for char in ",/\\\r\n"):
+                raise BuildError(f"Invalid process name rule: {item.raw}")
+            add("process_name", name)
+            continue
+        raw = item.raw.lower()
+        try:
+            network = ipaddress.ip_network(raw, strict=False)
+        except ValueError:
+            network = None
+        if network is not None:
+            add("ip_cidr", str(network))
+            continue
+        plus, dot = raw.startswith("+."), raw.startswith(".")
+        name = raw[2:] if plus else raw[1:] if dot else raw
+        if not name or not all(label == "*" or re.fullmatch(r"[a-z0-9_-]+", label) for label in name.split(".")):
+            raise BuildError(f"Unsupported JSON domain rule: {item.raw}")
+        if "*" not in name:
+            if not dot:
+                add("domain", name)
+            if plus or dot:
+                add("domain_suffix", "." + name)
+        else:
+            labels = r"\.".join(r"[^.]+" if label == "*" else re.escape(label) for label in name.split("."))
+            prefix = r"(?:[^.]+\.)*" if plus else r"(?:[^.]+\.)+" if dot else ""
+            add("domain_regex", "^" + prefix + labels + "$")
+    domains = {key: values for key, values in fields.items() if key.startswith("domain")}
+    rules = [domains] if domains else []
+    rules.extend({key: fields[key]} for key in ("ip_cidr", "process_name") if key in fields)
+    return json.dumps({"version": 3, "rules": rules}, ensure_ascii=False, indent=2)
+
+
+def self_check() -> None:
+    groups = json.loads(render_json_rules([Rule("exact.test"), Rule("+.suffix.test"), Rule(".child.test"), Rule("*.one.test"), Rule("+.stun.*.*"), Rule("disabled.test", enabled=False), Rule("192.0.2.1/24"), Rule("PROCESS-NAME,App.exe")]))["rules"]
+    rules = groups[0]
+
+    def matches(name: str) -> bool:
+        return name in rules.get("domain", []) or any(name.endswith(suffix) for suffix in rules.get("domain_suffix", [])) or any(re.fullmatch(pattern, name) for pattern in rules.get("domain_regex", []))
+
+    assert matches("exact.test") and not matches("a.exact.test")
+    assert matches("suffix.test") and matches("a.b.suffix.test") and not matches("bad-suffix.test")
+    assert matches("a.child.test") and not matches("child.test")
+    assert matches("a.one.test") and not matches("a.b.one.test") and not matches("one.test")
+    assert matches("stun.foo.bar") and matches("a.stun.foo.bar") and not matches("stun.bar")
+    assert not matches("disabled.test")
+    assert groups[1:] == [{"ip_cidr": ["192.0.2.0/24"]}, {"process_name": ["App.exe"]}]
+    assert json.loads(render_json_rules([Rule("disabled.test", enabled=False)]))["rules"] == []
+    for raw in ["PROCESS-NAME,", "PROCESS-NAME,/app.exe", "DOMAIN,app.test", "+.bad..test", "192.0.2.0/33"]:
+        try:
+            render_json_rules([Rule(raw)])
+        except BuildError:
+            continue
+        raise AssertionError(f"Invalid JSON rule accepted: {raw}")
+    print("JSON rule self-check passed.")
+
+
 def build_output(output: dict[str, Any]) -> tuple[Path, str]:
     path = ROOT / str(output.get("path", ""))
     fmt = str(output.get("format", "")).lower()
@@ -187,7 +258,7 @@ def build_output(output: dict[str, Any]) -> tuple[Path, str]:
 
     line_ending = detect_line_ending(path)
     include_categories = not bool(output.get("omit_categories", False))
-    content = line_ending.join(render_items(items, fmt, include_categories)) + line_ending
+    content = render_json_rules(items).replace("\n", line_ending) + line_ending if fmt == "json" else line_ending.join(render_items(items, fmt, include_categories)) + line_ending
     return path, content
 
 
@@ -220,9 +291,13 @@ def build_targets(check_mode: bool) -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build rule outputs from .rules sources")
     parser.add_argument("--check", action="store_true", help="Check generated files without writing")
+    parser.add_argument("--self-test", action="store_true", help="Check JSON matching semantics without writing")
     args = parser.parse_args()
 
     try:
+        if args.self_test:
+            self_check()
+            return
         failures = build_targets(check_mode=args.check)
     except BuildError as exc:
         print(f"[ERROR] {exc}")

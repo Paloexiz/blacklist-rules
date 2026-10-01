@@ -2,7 +2,7 @@
 
 **Select your Language: English | [简体中文](README.zh-cn.md)**
 
-This directory is where manual rule edits happen. Change the `*.rules` files here first. After you push those changes, GitHub Actions builds the Clash / Surge outputs and commits them.
+This directory is where manual rule edits happen. Change the `*.rules` files here first. After you push those changes, GitHub Actions builds the Clash / Surge / sing-box outputs and commits them.
 
 ## Basic Format
 
@@ -26,11 +26,13 @@ doodles.google # Currently blocked.
 - `! <entry>` marks a disabled entry.
 - A trailing `# note` is a maintenance note. It is only emitted to Clash outputs; Surge outputs only include the rule body.
 - `+.` is kept as-is in Clash outputs and converted to `.domain` in Surge outputs.
+- sing-box outputs native JSON with exact-domain, suffix and single-label wildcard semantics; `PROCESS-NAME,...` becomes `process_name`. Disabled entries and comments are omitted.
 - Do not edit generated outputs directly. Edit the source files here instead.
 
 ## Local Verification
 
 ```powershell
+python workflow_scripts/build_rules.py --self-test
 python workflow_scripts/build_rules.py
 python workflow_scripts/build_rules.py --check
 ```

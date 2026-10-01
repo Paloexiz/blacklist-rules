@@ -26,6 +26,18 @@
       ]
     },
     {
+      "path": "artifact/common/sing-box/blacklistrules_domainonly.json",
+      "format": "json",
+      "merge": "sort_categories_groups",
+      "sources": [
+        "rule_sources/unlock-game.rules",
+        "rule_sources/boost-game.rules",
+        "rule_sources/boost-nogame.rules",
+        "rule_sources/security-domain.rules",
+        "rule_sources/unlock-nogame.rules"
+      ]
+    },
+    {
       "path": "artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml",
       "format": "clash",
       "omit_categories": true,
@@ -34,6 +46,12 @@
     {
       "path": "artifact/individual/boost/surge/slowdomains_gameonly_domainonly.list",
       "format": "surge",
+      "omit_categories": true,
+      "sources": ["rule_sources/boost-game.rules"]
+    },
+    {
+      "path": "artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json",
+      "format": "json",
       "omit_categories": true,
       "sources": ["rule_sources/boost-game.rules"]
     },
@@ -48,6 +66,11 @@
       "sources": ["rule_sources/boost-nogame.rules"]
     },
     {
+      "path": "artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json",
+      "format": "json",
+      "sources": ["rule_sources/boost-nogame.rules"]
+    },
+    {
       "path": "artifact/individual/security/clash/anonymityservice_domainonly.yaml",
       "format": "clash",
       "sources": ["rule_sources/security-domain.rules"]
@@ -55,6 +78,11 @@
     {
       "path": "artifact/individual/security/surge/anonymityservice_domainonly.list",
       "format": "surge",
+      "sources": ["rule_sources/security-domain.rules"]
+    },
+    {
+      "path": "artifact/individual/security/sing-box/anonymityservice_domainonly.json",
+      "format": "json",
       "sources": ["rule_sources/security-domain.rules"]
     },
     {
@@ -68,6 +96,11 @@
       "sources": ["rule_sources/security-process.rules"]
     },
     {
+      "path": "artifact/individual/security/sing-box/anonymityservice_processnameonly.json",
+      "format": "json",
+      "sources": ["rule_sources/security-process.rules"]
+    },
+    {
       "path": "artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.yaml",
       "format": "clash",
       "sources": ["rule_sources/unlock-nogame.rules"]
@@ -75,6 +108,11 @@
     {
       "path": "artifact/individual/unlock/surge/blockeddomains_nogame_domainonly.list",
       "format": "surge",
+      "sources": ["rule_sources/unlock-nogame.rules"]
+    },
+    {
+      "path": "artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json",
+      "format": "json",
       "sources": ["rule_sources/unlock-nogame.rules"]
     },
     {
@@ -90,6 +128,12 @@
       "sources": ["rule_sources/unlock-game.rules"]
     },
     {
+      "path": "artifact/individual/unlock/sing-box/blockedgames_domainonly.json",
+      "format": "json",
+      "omit_categories": true,
+      "sources": ["rule_sources/unlock-game.rules"]
+    },
+    {
       "path": "artifact/other/clash/bluesky/bluesky.yaml",
       "format": "clash",
       "sources": ["rule_sources/other-bluesky.rules"]
@@ -97,6 +141,11 @@
     {
       "path": "artifact/other/surge/bluesky/bluesky.list",
       "format": "surge",
+      "sources": ["rule_sources/other-bluesky.rules"]
+    },
+    {
+      "path": "artifact/other/sing-box/bluesky/bluesky.json",
+      "format": "json",
       "sources": ["rule_sources/other-bluesky.rules"]
     }
   ]

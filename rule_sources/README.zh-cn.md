@@ -2,7 +2,7 @@
 
 **语言选择：[English](README.md) | 简体中文**
 
-这里是手动维护规则条目的入口。需要改规则时，先改本目录里的 `*.rules`。推送后，GitHub Actions 会构建 Clash / Surge 产物并提交。
+这里是手动维护规则条目的入口。需要改规则时，先改本目录里的 `*.rules`。推送后，GitHub Actions 会构建 Clash / Surge / sing-box 产物并提交。
 
 ## 基本格式
 
@@ -26,11 +26,13 @@ doodles.google # Currently blocked.
 - `! <entry>` 表示禁用条目。
 - 行尾 `# note` 是维护备注，只会输出到 Clash；Surge 只输出规则本体。
 - `+.` 在 Clash 中原样保留，在 Surge 中会转换为 `.domain`。
+- sing-box 输出原生 JSON，保留精确域名、后缀和单标签通配符语义；`PROCESS-NAME,...` 转换为 `process_name`。禁用条目及注释不输出。
 - 不要直接手改生成产物；需要改规则就改这里的源文件。
 
 ## 本地校验
 
 ```powershell
+python workflow_scripts/build_rules.py --self-test
 python workflow_scripts/build_rules.py
 python workflow_scripts/build_rules.py --check
 ```
