@@ -1,7 +1,7 @@
 {
   "adrules": {
     "source": "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt",
-    "sha256": "7d86ae4e0e2caa415ba45a6815ed1e816bc037040bfdd52fd27a3198f8508768",
+    "sha256": "4a6966abef80a728270fd837498af27b87fee4e506838fe07a4517336259fa2e",
     "kind": "Domain",
     "notices": "NOTICE.md",
     "outputs": {
