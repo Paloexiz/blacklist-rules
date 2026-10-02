@@ -1,0 +1,486 @@
+{
+  "adrules": {
+    "source": "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt",
+    "sha256": "6099ea01d6fd56f201077c43c4eb5a5b43eecfd701017197d002ecb579dfd3ac",
+    "kind": "Domain",
+    "notices": "NOTICE.md",
+    "outputs": {
+      "clash": "clash/adrules_Domain.yaml",
+      "surge": "surge/adrules_Domain.list",
+      "sing-box": "sing-box/adrules_Domain.json"
+    }
+  },
+  "private_ip": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.yaml",
+    "sha256": "397ddcfd2969af6b7ed3a6e586b512ad0124a99d5cd7cc614e9fd74d434400f5",
+    "kind": "IP",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/private_IP.yaml",
+      "surge": "surge/private_IP.list",
+      "sing-box": "sing-box/private_IP.json"
+    }
+  },
+  "private_domain": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.yaml",
+    "sha256": "10918636e35f4182a62d4ba06e4abe70e203d53e26548d5c27abf0f9bebe475b",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/private_Domain.yaml",
+      "surge": "surge/private_Domain.list",
+      "sing-box": "sing-box/private_Domain.json"
+    }
+  },
+  "steam": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Steam/Steam_OCD_Domain.txt",
+    "sha256": "1ca4158995cf4dd8c8dad5209982d0cf0f2d86dcb9d451b044e51b5f8f0be6cd",
+    "kind": "Domain",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Steam_Domain.yaml",
+      "surge": "surge/Steam_Domain.list",
+      "sing-box": "sing-box/Steam_Domain.json"
+    }
+  },
+  "copilot_ip": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Copilot/Copilot_OCD_IP.txt",
+    "sha256": "e27b94bb50bf9300e5f9cd77dd7e8449ccad896bd53a0a581f9a3e11e44331f2",
+    "kind": "IP",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Copilot_IP.yaml",
+      "surge": "surge/Copilot_IP.list",
+      "sing-box": "sing-box/Copilot_IP.json"
+    }
+  },
+  "copilot_domain": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Copilot/Copilot_OCD_Domain.txt",
+    "sha256": "3d1c0ea51d1af09f9892f77c9b951fb42b533e86f132458a2abcfb9951a5a87e",
+    "kind": "Domain",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Copilot_Domain.yaml",
+      "surge": "surge/Copilot_Domain.list",
+      "sing-box": "sing-box/Copilot_Domain.json"
+    }
+  },
+  "gemini": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.yaml",
+    "sha256": "05c8be16f78afcba288a318dff806b93d488d33c9b4b948e5d9e7e9bef4b5e76",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/google-gemini_Domain.yaml",
+      "surge": "surge/google-gemini_Domain.list",
+      "sing-box": "sing-box/google-gemini_Domain.json"
+    }
+  },
+  "adobeactivation": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/adobe-activation.yaml",
+    "sha256": "ea9fbc50608e97b3f3fd7d6702d148a7b6ca0bd9f9be8f2be178e56e15123d97",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/adobe-activation_Domain.yaml",
+      "surge": "surge/adobe-activation_Domain.list",
+      "sing-box": "sing-box/adobe-activation_Domain.json"
+    }
+  },
+  "googlefcm": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.yaml",
+    "sha256": "7e8eca66d28e535ae803ccab47eb3f87601f67f04bf042502956471471133bfb",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/googlefcm_Domain.yaml",
+      "surge": "surge/googlefcm_Domain.list",
+      "sing-box": "sing-box/googlefcm_Domain.json"
+    }
+  },
+  "z-library": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/z-library.yaml",
+    "sha256": "34a2a5a9ba02f490aacc64caf2fa06d2a5c408fb7801ef38a00ffae18954cb25",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/z-library_Domain.yaml",
+      "surge": "surge/z-library_Domain.list",
+      "sing-box": "sing-box/z-library_Domain.json"
+    }
+  },
+  "linuxdo": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/linuxdo.yaml",
+    "sha256": "768cdd2e49f29b71b7faaf0c7b48c508ac3e6d4061298fa4511b51b7da837d3d",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/linuxdo_Domain.yaml",
+      "surge": "surge/linuxdo_Domain.list",
+      "sing-box": "sing-box/linuxdo_Domain.json"
+    }
+  },
+  "twitter_ip": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.yaml",
+    "sha256": "4f53efe3880548f09645902b7ffa9f20a4542d96b1ed4618023293385fa998e5",
+    "kind": "IP",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/twitter_IP.yaml",
+      "surge": "surge/twitter_IP.list",
+      "sing-box": "sing-box/twitter_IP.json"
+    }
+  },
+  "twitter_domain": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.yaml",
+    "sha256": "e21969caac51ecd0534345a8b19166d7a0c31cd595a8eef167e1d82f5ed1d414",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/twitter_Domain.yaml",
+      "surge": "surge/twitter_Domain.list",
+      "sing-box": "sing-box/twitter_Domain.json"
+    }
+  },
+  "github": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.yaml",
+    "sha256": "e1c015908fae8789afb5adc395e8bbf6acb3868a48462968431eeefda0c8ca26",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/github_Domain.yaml",
+      "surge": "surge/github_Domain.list",
+      "sing-box": "sing-box/github_Domain.json"
+    }
+  },
+  "gitlab": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gitlab.yaml",
+    "sha256": "ce8c4424ed88659f6db7bff7153b202c6b50bd597d26e6f66692c40829e0e142",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/gitlab_Domain.yaml",
+      "surge": "surge/gitlab_Domain.list",
+      "sing-box": "sing-box/gitlab_Domain.json"
+    }
+  },
+  "onedrive": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.yaml",
+    "sha256": "f892e0c94d56b72c6fdb7e12aab431b4203c5806edcc7453a46eb46433591005",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/onedrive_Domain.yaml",
+      "surge": "surge/onedrive_Domain.list",
+      "sing-box": "sing-box/onedrive_Domain.json"
+    }
+  },
+  "microsoft": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Microsoft/Microsoft_OCD_Domain.txt",
+    "sha256": "ea8d62064fce5a4d68c554a10fc5ac3e3b348bdf1bb24230f2e1b79b24d43b64",
+    "kind": "Domain",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Microsoft_Domain.yaml",
+      "surge": "surge/Microsoft_Domain.list",
+      "sing-box": "sing-box/Microsoft_Domain.json"
+    }
+  },
+  "openai": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.yaml",
+    "sha256": "19d194277b7eccade2b6d65a5a13770e028feea3e39140faaac43bd12d5a34af",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/openai_Domain.yaml",
+      "surge": "surge/openai_Domain.list",
+      "sing-box": "sing-box/openai_Domain.json"
+    }
+  },
+  "anthropic": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.yaml",
+    "sha256": "5f1bbc6cec303a0f8010303daac24d92ac58efc905b4847e397b06320e23d0c5",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/anthropic_Domain.yaml",
+      "surge": "surge/anthropic_Domain.list",
+      "sing-box": "sing-box/anthropic_Domain.json"
+    }
+  },
+  "discord": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.yaml",
+    "sha256": "b066c5e8bcf3f5ceb00eac510414cbd3b61b36485f2aed0a672e07f6a50a6f17",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/discord_Domain.yaml",
+      "surge": "surge/discord_Domain.list",
+      "sing-box": "sing-box/discord_Domain.json"
+    }
+  },
+  "aliyun": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/aliyun.yaml",
+    "sha256": "770c6859bf572e27ac23c8029a16c6666ae32aa143c575a8592ba4f71ee3ef93",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/aliyun_Domain.yaml",
+      "surge": "surge/aliyun_Domain.list",
+      "sing-box": "sing-box/aliyun_Domain.json"
+    }
+  },
+  "cloudflare": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare.yaml",
+    "sha256": "adbbffbb865860977ac83fe53f9881b3c50f1c751f88e21017de4e9f2fa48a04",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/cloudflare_Domain.yaml",
+      "surge": "surge/cloudflare_Domain.list",
+      "sing-box": "sing-box/cloudflare_Domain.json"
+    }
+  },
+  "docker": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/docker.yaml",
+    "sha256": "3aea2a4360d163b3f0c3229e750bb0d5ed1f7dd407d23ea4e7670e13570b1091",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/docker_Domain.yaml",
+      "surge": "surge/docker_Domain.list",
+      "sing-box": "sing-box/docker_Domain.json"
+    }
+  },
+  "homebrew": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/homebrew.yaml",
+    "sha256": "cec0c9606075cf100c0420e4863cbadfe4bf1de2a076cba679a6500ecd005f1c",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/homebrew_Domain.yaml",
+      "surge": "surge/homebrew_Domain.list",
+      "sing-box": "sing-box/homebrew_Domain.json"
+    }
+  },
+  "python": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/python.yaml",
+    "sha256": "f15bb5e2fa4bd80e7dd66f21617768e5d4c0257877b70c7d4953066f0af8d288",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/python_Domain.yaml",
+      "surge": "surge/python_Domain.list",
+      "sing-box": "sing-box/python_Domain.json"
+    }
+  },
+  "icloud": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/icloud.yaml",
+    "sha256": "7780ac7c90942c813673e757da0c82bb3dbca339cd52cbfd15225d30828f3679",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/icloud_Domain.yaml",
+      "surge": "surge/icloud_Domain.list",
+      "sing-box": "sing-box/icloud_Domain.json"
+    }
+  },
+  "apple": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.yaml",
+    "sha256": "6f48415b7e67cbfa29ffde10563f08fbe0ebd82f3c199e1ae9412245df7d7e77",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/apple_Domain.yaml",
+      "surge": "surge/apple_Domain.list",
+      "sing-box": "sing-box/apple_Domain.json"
+    }
+  },
+  "youtube": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.yaml",
+    "sha256": "ec32854438b8ad4e2f2f2ee0d578834c667f1d0cec4c82357e34629452d2fc5d",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/youtube_Domain.yaml",
+      "surge": "surge/youtube_Domain.list",
+      "sing-box": "sing-box/youtube_Domain.json"
+    }
+  },
+  "google_ip": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Google/Google_OCD_IP.txt",
+    "sha256": "332d1d17281d628e29a830befaf229e4e7abef4323adc89a8d56ae311b22479c",
+    "kind": "IP",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Google_IP.yaml",
+      "surge": "surge/Google_IP.list",
+      "sing-box": "sing-box/Google_IP.json"
+    }
+  },
+  "google_domain": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Google/Google_OCD_Domain.txt",
+    "sha256": "befdf8c4cad15ab41b8735805c26e533a3322c448a25176b95d0ff7b9833e373",
+    "kind": "Domain",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Google_Domain.yaml",
+      "surge": "surge/Google_Domain.list",
+      "sing-box": "sing-box/Google_Domain.json"
+    }
+  },
+  "twitch": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitch.yaml",
+    "sha256": "a666bcd47d0b35485921269e4809e15b83fc478927b53a8aeb06edf9ec2c3770",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/twitch_Domain.yaml",
+      "surge": "surge/twitch_Domain.list",
+      "sing-box": "sing-box/twitch_Domain.json"
+    }
+  },
+  "niconico": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/niconico.yaml",
+    "sha256": "a92dc4ffda45378fcfb51a7eea36407a529a14315c9df1e38d419a061b8872a3",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/niconico_Domain.yaml",
+      "surge": "surge/niconico_Domain.list",
+      "sing-box": "sing-box/niconico_Domain.json"
+    }
+  },
+  "pixiv": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Pixiv/Pixiv_OCD_Domain.txt",
+    "sha256": "b7f84c53940f6144e49a3eb3471f18cfcc423f6a51e2ea9f6a73a77cf20f9e59",
+    "kind": "Domain",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Pixiv_Domain.yaml",
+      "surge": "surge/Pixiv_Domain.list",
+      "sing-box": "sing-box/Pixiv_Domain.json"
+    }
+  },
+  "netflix_ip": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.yaml",
+    "sha256": "409cee1a04e691b033057429b3ecf2d3fb306ef199ec98316cbd5b4eab500084",
+    "kind": "IP",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/netflix_IP.yaml",
+      "surge": "surge/netflix_IP.list",
+      "sing-box": "sing-box/netflix_IP.json"
+    }
+  },
+  "netflix_domain": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.yaml",
+    "sha256": "4cf3bf6f2b28d578894d767415bbca0cc8ff4bf326b1ad8fffd59dba41da016f",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/netflix_Domain.yaml",
+      "surge": "surge/netflix_Domain.list",
+      "sing-box": "sing-box/netflix_Domain.json"
+    }
+  },
+  "disney": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.yaml",
+    "sha256": "21fee1a588ef81d49cb45714f7efa4d85c05af2b315443f6d55a4fbab6168391",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/disney_Domain.yaml",
+      "surge": "surge/disney_Domain.list",
+      "sing-box": "sing-box/disney_Domain.json"
+    }
+  },
+  "bilibili": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.yaml",
+    "sha256": "d50190957169dab46966df8572bec3a8ab95714b220bf50ac5e8a86fb225a7df",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/bilibili_Domain.yaml",
+      "surge": "surge/bilibili_Domain.list",
+      "sing-box": "sing-box/bilibili_Domain.json"
+    }
+  },
+  "spotify": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.yaml",
+    "sha256": "f3e69f940cacfa667dfe14d656523d9eb84d358a64195cd0fdefa5d3b0a0ee26",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/spotify_Domain.yaml",
+      "surge": "surge/spotify_Domain.list",
+      "sing-box": "sing-box/spotify_Domain.json"
+    }
+  },
+  "dmm": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dmm.yaml",
+    "sha256": "7293d5938eb4e35e47f70bf9f158e8da34072b9b47b91f3381107d7a2612a335",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/dmm_Domain.yaml",
+      "surge": "surge/dmm_Domain.list",
+      "sing-box": "sing-box/dmm_Domain.json"
+    }
+  },
+  "telegram_ip": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Telegram/Telegram_OCD_IP.txt",
+    "sha256": "2a0ee9e814281808c137f51bdcaeceb742c81a954dde52ed3da76faf52d143dd",
+    "kind": "IP",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Telegram_IP.yaml",
+      "surge": "surge/Telegram_IP.list",
+      "sing-box": "sing-box/Telegram_IP.json"
+    }
+  },
+  "telegram_domain": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Telegram/Telegram_OCD_Domain.txt",
+    "sha256": "679397a5bd8114f8e7dac4f65be4241dc1848ad05bb578b3b53c9be1145c4895",
+    "kind": "Domain",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "clash": "clash/Telegram_Domain.yaml",
+      "surge": "surge/Telegram_Domain.list",
+      "sing-box": "sing-box/Telegram_Domain.json"
+    }
+  },
+  "gfw": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.yaml",
+    "sha256": "dc7128b9ce3619f8d1d74edfde267da665a1a06ec6b774aa35f7141addf8b0cf",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/gfw_Domain.yaml",
+      "surge": "surge/gfw_Domain.list",
+      "sing-box": "sing-box/gfw_Domain.json"
+    }
+  },
+  "applications": {
+    "source": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt",
+    "sha256": "33bc8f07bacf74082fcb5f361eded1f6f9d3abcedcbe37ada2eb2ab4ae031732",
+    "kind": "Process",
+    "notices": "licenses/Loyalsoldier/LICENSE",
+    "outputs": {
+      "clash": "clash/applications.yaml",
+      "surge": "surge/applications.list",
+      "sing-box": "sing-box/applications.json"
+    }
+  },
+  "cn_domain": {
+    "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.yaml",
+    "sha256": "421b7fb78ce3d0190f066120b30bc41d19509dbeb39faf55434a49dff89a9c54",
+    "kind": "Domain",
+    "notices": "licenses/MetaCubeX/LICENSE",
+    "outputs": {
+      "clash": "clash/cn_Domain.yaml",
+      "surge": "surge/cn_Domain.list",
+      "sing-box": "sing-box/cn_Domain.json"
+    }
+  }
+}

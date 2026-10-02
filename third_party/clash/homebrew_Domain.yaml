@@ -1,0 +1,6 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/homebrew.yaml
+# Notices: third_party/licenses/MetaCubeX/LICENSE
+payload:
+  - homebrew.bintray.com
+  - +.brew.sh

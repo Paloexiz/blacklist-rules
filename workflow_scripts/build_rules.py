@@ -178,11 +178,13 @@ def detect_line_ending(path: Path) -> str:
 
 def render_json_rules(items: list[Item]) -> str:
     fields: dict[str, list[str]] = {}
+    seen: dict[str, set[str]] = {}
 
     def add(field: str, value: str) -> None:
         values = fields.setdefault(field, [])
-        # ponytail: small source lists keep ordered deduplication simple; add sets if imports grow large.
-        if value not in values:
+        unique = seen.setdefault(field, set())
+        if value not in unique:
+            unique.add(value)
             values.append(value)
 
     for item in items:

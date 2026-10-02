@@ -1,0 +1,10 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/docker.yaml
+# Notices: third_party/licenses/MetaCubeX/LICENSE
+payload:
+  - docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com
+  - docker-pinata-support.s3.amazonaws.com
+  - +.compose-spec.io
+  - +.docker.com
+  - +.docker.io
+  - +.dockerstatic.com

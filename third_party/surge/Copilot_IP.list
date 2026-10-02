@@ -1,0 +1,5 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Copilot/Copilot_OCD_IP.txt
+# Notices: third_party/licenses/Rule-for-OCD/LICENSE
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve

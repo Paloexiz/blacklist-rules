@@ -1,0 +1,11 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Pixiv/Pixiv_OCD_Domain.txt
+# Notices: third_party/licenses/Rule-for-OCD/LICENSE
+.booth.pm
+.fanbox.cc
+.pixiv.cat
+.pixiv.co.jp
+.pixiv.me
+.pixiv.net
+.pixiv.org
+.pximg.net

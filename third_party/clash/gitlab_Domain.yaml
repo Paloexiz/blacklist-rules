@@ -1,0 +1,9 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gitlab.yaml
+# Notices: third_party/licenses/MetaCubeX/LICENSE
+payload:
+  - gitlab-assets.oss-cn-hongkong.aliyuncs.com
+  - +.gitlab.com
+  - +.gitlab.io
+  - +.gitlab.net
+  - +.gitlab-static.net

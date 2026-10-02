@@ -28,6 +28,8 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
 
 源文件格式与维护约定见 [rule_sources/README.zh-cn.md](rule_sources/README.zh-cn.md)。
 
+第三方规则每天同步，并提供 Clash、Surge 和 sing-box 三种格式。订阅链接与维护说明见 [third_party/README.zh-cn.md](third_party/README.zh-cn.md)，上游许可见 [third_party/NOTICE.zh-cn.md](third_party/NOTICE.zh-cn.md)。
+
 ## 相关文档与链接
 
 **提示**：CDN 镜像链接可能因为缓存而滞后。需要最新文件时，请优先使用原始链接。

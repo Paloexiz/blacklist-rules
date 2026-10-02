@@ -28,6 +28,8 @@ On pull requests, GitHub Actions checks generated outputs against the source fil
 
 See [rule_sources/README.md](rule_sources/README.md) for the source format and maintenance rules.
 
+Third-party providers are synchronized daily in Clash, Surge and sing-box formats. See [third_party/README.md](third_party/README.md) for links and maintenance, and [third_party/NOTICE.md](third_party/NOTICE.md) for their upstream licenses.
+
 ## Related documents and links
 
 **Note**: CDN links can lag because of caching. Use the original links if you need the latest files.

@@ -1,0 +1,11 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.yaml
+# Notices: third_party/licenses/MetaCubeX/LICENSE
+servd-anthropic-website.b-cdn.net
+.anthropic.com
+.clau.de
+.claude.ai
+.claude.com
+.claudemcpclient.com
+.claudemcpcontent.com
+.claudeusercontent.com

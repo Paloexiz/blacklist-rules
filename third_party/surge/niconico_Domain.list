@@ -1,0 +1,13 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/niconico.yaml
+# Notices: third_party/licenses/MetaCubeX/LICENSE
+.nico
+.nico.ms
+.nicochannel.jp
+.nicodic.jp
+.nicomanga.jp
+.niconico.com
+.nicoseiga.jp
+.nicovideo.jp
+.nimg.jp
+.simg.jp

@@ -1,0 +1,9 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Clash/Google/Google_OCD_IP.txt
+# Notices: third_party/licenses/Rule-for-OCD/LICENSE
+payload:
+  - 172.110.32.0/21
+  - 173.194.0.0/16
+  - 216.73.80.0/20
+  - 74.125.0.0/16
+  - 2620:120:e000::/40
