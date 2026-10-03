@@ -1,7 +1,7 @@
 {
   "adrules": {
     "source": "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt",
-    "sha256": "4a6966abef80a728270fd837498af27b87fee4e506838fe07a4517336259fa2e",
+    "sha256": "c79440a061bfc45c0eda94d05aef76dbe5e03c9a4ec10192477541119bc8f6df",
     "kind": "Domain",
     "notices": "NOTICE.md",
     "outputs": {
@@ -199,7 +199,7 @@
   },
   "anthropic": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.yaml",
-    "sha256": "5f1bbc6cec303a0f8010303daac24d92ac58efc905b4847e397b06320e23d0c5",
+    "sha256": "b2f2f545516246137ac8da3bf75f42fb1c4b9ab13d351e5d7de7700cda184d75",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
@@ -287,7 +287,7 @@
   },
   "apple": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.yaml",
-    "sha256": "8ff30570d7fbe84c353ea908c8361330393b196890955279ccb34edd14f5a265",
+    "sha256": "03cab44f22a55fa59da6f73c1c07fc04520b4dd9d4502f98653cce7bcf8bf82d",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
@@ -386,7 +386,7 @@
   },
   "disney": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.yaml",
-    "sha256": "8931d356f6fdd841a74cbc0bd19f32c1b8a2e97f27ab0e5dc2116b84d9c519d2",
+    "sha256": "21fee1a588ef81d49cb45714f7efa4d85c05af2b315443f6d55a4fbab6168391",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
@@ -397,7 +397,7 @@
   },
   "bilibili": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.yaml",
-    "sha256": "d50190957169dab46966df8572bec3a8ab95714b220bf50ac5e8a86fb225a7df",
+    "sha256": "7fb044340e7dcc3ff2d4338dbf7b7725a80fed9ef8ae330b30172ea018ea0a63",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
@@ -452,7 +452,7 @@
   },
   "gfw": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.yaml",
-    "sha256": "5a4656095aa2bed168caab6fc25e20e45f68545a0a222bafcc5a8cb23a740c6e",
+    "sha256": "c53120fba9ce1a45fcfd93ea9e37a83436cdb49cfd32c1bd241749864572b25f",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
