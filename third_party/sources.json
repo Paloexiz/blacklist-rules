@@ -1,7 +1,7 @@
 {
   "adrules": {
     "source": "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules_domainset.txt",
-    "sha256": "c79440a061bfc45c0eda94d05aef76dbe5e03c9a4ec10192477541119bc8f6df",
+    "sha256": "e92d56710a0b5b1ce8f623185a7c430ecc99561c5aab26499cd972e13ee19059",
     "kind": "Domain",
     "notices": "NOTICE.md",
     "outputs": {
@@ -278,7 +278,7 @@
   },
   "apple": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.yaml",
-    "sha256": "03cab44f22a55fa59da6f73c1c07fc04520b4dd9d4502f98653cce7bcf8bf82d",
+    "sha256": "9f364b59999ebbeb2a47cd48c1b5118762f7378fdebc5bf891d1cd440f45cf92",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
@@ -388,7 +388,7 @@
   },
   "bilibili": {
     "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.yaml",
-    "sha256": "7fb044340e7dcc3ff2d4338dbf7b7725a80fed9ef8ae330b30172ea018ea0a63",
+    "sha256": "d50190957169dab46966df8572bec3a8ab95714b220bf50ac5e8a86fb225a7df",
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
@@ -476,7 +476,7 @@
   },
   "surge_adrules": {
     "source": "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules.list",
-    "sha256": "90a4f025d2ccca4a8edf341206252a82a81e99633dc8da071899e01be9b0192c",
+    "sha256": "8daf3f2e02981fbf4c971c7e3817a2bab8d3df29b5789f433ad7bd0b8f36857f",
     "kind": "SurgeSplit",
     "notices": "NOTICE.md",
     "outputs": {
@@ -548,8 +548,8 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/twitter/twitter_domain.list",
-      "IP": "surge/blackmatrix7/twitter/twitter_ip.list",
-      "Keyword": "surge/blackmatrix7/twitter/twitter_keyword.list"
+      "Keyword": "surge/blackmatrix7/twitter/twitter_keyword.list",
+      "IP": "surge/blackmatrix7/twitter/twitter_ip.list"
     }
   },
   "surge_blackmatrix7_claude": {
@@ -568,8 +568,8 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/openai/openai_domain.list",
-      "IP": "surge/blackmatrix7/openai/openai_ip.list",
       "Keyword": "surge/blackmatrix7/openai/openai_keyword.list",
+      "IP": "surge/blackmatrix7/openai/openai_ip.list",
       "ASN": "surge/blackmatrix7/openai/openai_asn.list"
     }
   },
@@ -580,8 +580,8 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/copilot/copilot_domain.list",
-      "IP": "surge/blackmatrix7/copilot/copilot_ip.list",
       "Keyword": "surge/blackmatrix7/copilot/copilot_keyword.list",
+      "IP": "surge/blackmatrix7/copilot/copilot_ip.list",
       "ASN": "surge/blackmatrix7/copilot/copilot_asn.list"
     }
   },
@@ -632,8 +632,8 @@
     "outputs": {
       "Domain": "surge/blackmatrix7/microsoft/microsoft_domain.list",
       "Keyword": "surge/blackmatrix7/microsoft/microsoft_keyword.list",
-      "Process": "surge/blackmatrix7/microsoft/microsoft_process.list",
-      "UserAgent": "surge/blackmatrix7/microsoft/microsoft_useragent.list"
+      "UserAgent": "surge/blackmatrix7/microsoft/microsoft_useragent.list",
+      "Process": "surge/blackmatrix7/microsoft/microsoft_process.list"
     }
   },
   "surge_blackmatrix7_discord": {
@@ -715,10 +715,10 @@
     "kind": "SurgeSplit",
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
-      "IP": "surge/blackmatrix7/apple/apple_ip.list",
       "Keyword": "surge/blackmatrix7/apple/apple_keyword.list",
-      "Process": "surge/blackmatrix7/apple/apple_process.list",
-      "UserAgent": "surge/blackmatrix7/apple/apple_useragent.list"
+      "IP": "surge/blackmatrix7/apple/apple_ip.list",
+      "UserAgent": "surge/blackmatrix7/apple/apple_useragent.list",
+      "Process": "surge/blackmatrix7/apple/apple_process.list"
     }
   },
   "surge_blackmatrix7_youtube": {
@@ -728,8 +728,8 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/youtube/youtube_domain.list",
-      "IP": "surge/blackmatrix7/youtube/youtube_ip.list",
       "Keyword": "surge/blackmatrix7/youtube/youtube_keyword.list",
+      "IP": "surge/blackmatrix7/youtube/youtube_ip.list",
       "UserAgent": "surge/blackmatrix7/youtube/youtube_useragent.list"
     }
   },
@@ -740,10 +740,10 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/google/google_domain.list",
-      "IP": "surge/blackmatrix7/google/google_ip.list",
       "Keyword": "surge/blackmatrix7/google/google_keyword.list",
-      "Process": "surge/blackmatrix7/google/google_process.list",
-      "UserAgent": "surge/blackmatrix7/google/google_useragent.list"
+      "IP": "surge/blackmatrix7/google/google_ip.list",
+      "UserAgent": "surge/blackmatrix7/google/google_useragent.list",
+      "Process": "surge/blackmatrix7/google/google_process.list"
     }
   },
   "surge_blackmatrix7_twitch": {
@@ -753,8 +753,8 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/twitch/twitch_domain.list",
-      "IP": "surge/blackmatrix7/twitch/twitch_ip.list",
       "Keyword": "surge/blackmatrix7/twitch/twitch_keyword.list",
+      "IP": "surge/blackmatrix7/twitch/twitch_ip.list",
       "Process": "surge/blackmatrix7/twitch/twitch_process.list"
     }
   },
@@ -784,10 +784,10 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/netflix/netflix_domain.list",
-      "IP": "surge/blackmatrix7/netflix/netflix_ip.list",
       "Keyword": "surge/blackmatrix7/netflix/netflix_keyword.list",
-      "Process": "surge/blackmatrix7/netflix/netflix_process.list",
-      "UserAgent": "surge/blackmatrix7/netflix/netflix_useragent.list"
+      "IP": "surge/blackmatrix7/netflix/netflix_ip.list",
+      "UserAgent": "surge/blackmatrix7/netflix/netflix_useragent.list",
+      "Process": "surge/blackmatrix7/netflix/netflix_process.list"
     }
   },
   "surge_blackmatrix7_disney": {
@@ -797,8 +797,8 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/disney/disney_domain.list",
-      "Process": "surge/blackmatrix7/disney/disney_process.list",
-      "UserAgent": "surge/blackmatrix7/disney/disney_useragent.list"
+      "UserAgent": "surge/blackmatrix7/disney/disney_useragent.list",
+      "Process": "surge/blackmatrix7/disney/disney_process.list"
     }
   },
   "surge_blackmatrix7_bilibili": {
@@ -809,8 +809,8 @@
     "outputs": {
       "Domain": "surge/blackmatrix7/bilibili/bilibili_domain.list",
       "IP": "surge/blackmatrix7/bilibili/bilibili_ip.list",
-      "Process": "surge/blackmatrix7/bilibili/bilibili_process.list",
-      "UserAgent": "surge/blackmatrix7/bilibili/bilibili_useragent.list"
+      "UserAgent": "surge/blackmatrix7/bilibili/bilibili_useragent.list",
+      "Process": "surge/blackmatrix7/bilibili/bilibili_process.list"
     }
   },
   "surge_blackmatrix7_spotify": {
@@ -820,10 +820,10 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/spotify/spotify_domain.list",
-      "IP": "surge/blackmatrix7/spotify/spotify_ip.list",
       "Keyword": "surge/blackmatrix7/spotify/spotify_keyword.list",
-      "Process": "surge/blackmatrix7/spotify/spotify_process.list",
-      "UserAgent": "surge/blackmatrix7/spotify/spotify_useragent.list"
+      "IP": "surge/blackmatrix7/spotify/spotify_ip.list",
+      "UserAgent": "surge/blackmatrix7/spotify/spotify_useragent.list",
+      "Process": "surge/blackmatrix7/spotify/spotify_process.list"
     }
   },
   "surge_blackmatrix7_dmm": {
@@ -843,10 +843,10 @@
     "notices": "licenses/blackmatrix7-LICENSE",
     "outputs": {
       "Domain": "surge/blackmatrix7/telegram/telegram_domain.list",
-      "IP": "surge/blackmatrix7/telegram/telegram_ip.list",
       "Keyword": "surge/blackmatrix7/telegram/telegram_keyword.list",
-      "Process": "surge/blackmatrix7/telegram/telegram_process.list",
+      "IP": "surge/blackmatrix7/telegram/telegram_ip.list",
       "ASN": "surge/blackmatrix7/telegram/telegram_asn.list",
+      "Process": "surge/blackmatrix7/telegram/telegram_process.list",
       "Logical": "surge/blackmatrix7/telegram/telegram_logical.list"
     }
   },
@@ -870,7 +870,7 @@
   },
   "mrs_adrules": {
     "source": "https://raw.githubusercontent.com/Cats-Team/AdRules/main/adrules-mihomo.mrs",
-    "sha256": "bfde5f73e94e413d3a9790cac3fc59592461a7f9f6b2e01261eedc4725eec04b",
+    "sha256": "c166dd156f993f9f2288a1a09de4ea7a638dc7d0852fe5bef6553902351c00de",
     "kind": "MrsDomain",
     "notices": "NOTICE.md",
     "outputs": {
