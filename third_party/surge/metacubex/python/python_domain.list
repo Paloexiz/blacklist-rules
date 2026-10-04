@@ -1,0 +1,9 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/python.list
+# Notices: third_party/licenses/MetaCubeX/LICENSE
+.pycon.org
+.pypa.io
+.pypi.io
+.pypi.org
+.python.org
+.pythonhosted.org

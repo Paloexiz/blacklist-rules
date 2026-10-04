@@ -1,0 +1,13 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Surge/Steam/Steam.list
+# Notices: third_party/licenses/Rule-for-OCD/LICENSE
+# NAME: Steam
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:15:08
+# DOMAIN-KEYWORD: 3
+# DOMAIN-SUFFIX: 51
+# TOTAL: 54
+DOMAIN-KEYWORD,steambroadcast
+DOMAIN-KEYWORD,steamstore
+DOMAIN-KEYWORD,steamuserimages

@@ -1,0 +1,25 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleFCM/GoogleFCM.list
+# Notices: third_party/licenses/blackmatrix7-LICENSE
+# NAME: GoogleFCM
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:18:26
+# DOMAIN: 15
+# IP-CIDR: 26
+# TOTAL: 41
+alt1-mtalk.google.com
+alt2-mtalk.google.com
+alt3-mtalk.google.com
+alt4-mtalk.google.com
+alt5-mtalk.google.com
+alt6-mtalk.google.com
+alt7-mtalk.google.com
+alt8-mtalk.google.com
+android.apis.google.com
+device-provisioning.googleapis.com
+firebaseinstallations.googleapis.com
+mtalk-dev.google.com
+mtalk-staging.google.com
+mtalk.google.com
+mtalk4.google.com

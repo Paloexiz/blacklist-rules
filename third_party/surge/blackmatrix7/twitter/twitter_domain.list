@@ -1,0 +1,37 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list
+# Notices: third_party/licenses/blackmatrix7-LICENSE
+# NAME: Twitter
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-09-28 02:08:26
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 26
+# IP-CIDR: 6
+# TOTAL: 33
+.ads-twitter.com
+.cms-twdigitalassets.com
+.grok.com
+.periscope.tv
+.pscp.tv
+.t.co
+.tellapart.com
+.tweetdeck.com
+.twimg.co
+.twimg.com
+.twimg.org
+.twitpic.com
+.twitter.biz
+.twitter.com
+.twitter.jp
+.twittercommunity.com
+.twitterflightschool.com
+.twitterinc.com
+.twitteroauth.com
+.twitterstat.us
+.twtrdns.net
+.twttr.com
+.twttr.net
+.twvid.com
+.vine.co
+.x.com

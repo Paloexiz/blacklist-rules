@@ -1,0 +1,11 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Niconico/Niconico.list
+# Notices: third_party/licenses/blackmatrix7-LICENSE
+# NAME: Niconico
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-06-06 09:16:56
+# DOMAIN-SUFFIX: 9
+# USER-AGENT: 1
+# TOTAL: 10
+USER-AGENT,Niconico*

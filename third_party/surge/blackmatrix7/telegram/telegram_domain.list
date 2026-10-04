@@ -1,0 +1,40 @@
+# Converted by blacklist-rules; matching rules retain upstream ownership.
+# Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list
+# Notices: third_party/licenses/blackmatrix7-LICENSE
+# NAME: Telegram
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-09-10 02:08:26
+# DOMAIN: 2
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 22
+# IP-ASN: 5
+# IP-CIDR: 6
+# IP-CIDR6: 4
+# OR: 1
+# PROCESS-NAME: 5
+# TOTAL: 46
+api.imem.app
+api.swiftgram.app
+.cdn-telegram.org
+.comments.app
+.contest.com
+.graph.org
+.legra.ph
+.mbrx.app
+.quiz.directory
+.stel.com
+.t.me
+.tdesktop.com
+.telega.one
+.telegra.ph
+.telegram-cdn.org
+.telegram.dog
+.telegram.me
+.telegram.org
+.telegram.space
+.telegramdownload.com
+.telesco.pe
+.tg.dev
+.tx.me
+.usercontent.dev

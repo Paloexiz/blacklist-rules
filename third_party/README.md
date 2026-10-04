@@ -4,7 +4,9 @@
 
 ## Introduction
 
-Synchronizes every third-party provider used by the Mihomo override in Clash, Surge and sing-box formats. Custom rules remain in the existing `artifact/` directories.
+Synchronizes a fixed list of upstream files and separates their rules by type, including Domain, IP, Keyword, Process, ASN, UserAgent and Logical. Rules are grouped into author and service directories with lowercase filenames. Custom rules remain in the existing `artifact/` directories.
+
+**Usage**: Choose a rule link for your client from the tables below, then assign a routing policy in your client configuration, such as direct, proxy or reject. Rule files contain only matching conditions; your client configuration determines how matching traffic is handled. This repository regularly synchronizes third-party rule content from upstream.
 
 **Update frequency**: one scheduled sync per day, at **03:23** Hong Kong time (UTC+8, the same as Beijing time), corresponding to **19:23 UTC on the previous day**.
 
@@ -12,11 +14,11 @@ The schedule takes effect after the [workflow](../.github/workflows/sync-third-p
 
 ## Repository Maintenance
 
-The provider inventory is read directly from `ruleProviders` in `client_conf/mihomo_override/mihomo_override.js`. The workflow runs `python workflow_scripts/sync_third_party_rules.py`, downloads readable upstream sources, reuses the existing converter for all three formats, and updates the source manifest. License files remain fixed copies and are maintained through manual review.
+The sync inventory is fixed in `UPSTREAM_RULES` in `workflow_scripts/sync_third_party_rules.py`; it is not read from client profiles. Each entry specifies its upstream URL, input type and output name. Edit this list to change the sync scope. `third_party/sources.json` records each download and its output paths. The workflow converts Domain/IP/Process sources into Clash YAML, Surge and sing-box formats, and copies upstream MRS files unchanged. When the same repository and service already provide Surge rules, the upstream Surge file is used without generating another converted copy. Mihomo validates the MRS files. Set `MIHOMO_BIN` to the core executable when running the sync script locally; the workflow already configures it. Surge sources are split into separate files for every matching type, retaining Surge-specific syntax, and appear in the Surge table below. Different upstreams are stored and updated separately. Unsupported rules fail validation rather than being silently omitted. License files remain fixed copies and are maintained through manual review.
 
-All sources and conversions are validated before outputs are updated. A download, content or conversion failure prevents publication and preserves the previously published files. Unchanged contents create no commit. Run Sync Third-Party Rules manually from Actions when needed.
+Successful syncs use the current upstream content and remove rules deleted upstream. If an upstream repository or file returns HTTP 404/410, its existing files and last successful source record remain unchanged while other sources continue syncing. A missing source without a matching local copy, other download failures, or invalid content prevent publication and preserve the previously published files. All available sources are validated before outputs are updated. Unchanged contents create no commit. Run Sync Third-Party Rules manually from Actions when needed.
 
-Maintain third-party rules upstream rather than editing generated files. Conversion preserves matching categories and adds no routing policies.
+Files are generated only for categories that contain upstream rules. When a category has no rules, its files, download links and references in the example profiles are removed. A fixed list specifies which upstream files to sync; client profiles are read only to update references.
 
 ## Third-Party Licenses
 
@@ -38,199 +40,201 @@ Remote rule sets use the original URL with `type: remote` and `format: source`. 
   </tr>
   <tr align="center">
     <td>adrules</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/adrules_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/adrules_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/cats-team/adrules/adrules_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/cats-team/adrules/adrules_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>private</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/private_IP.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/private_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/private_IP.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/private_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/private/private_ip.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/private/private_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/private/private_ip.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/private/private_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Steam</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Steam_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Steam_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/steam/steam_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/steam/steam_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Copilot</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Copilot_IP.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Copilot_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Copilot_IP.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Copilot_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/copilot/copilot_ip.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/copilot/copilot_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/copilot/copilot_ip.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/copilot/copilot_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>google-gemini</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/google-gemini_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/google-gemini_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/google-gemini/google-gemini_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/google-gemini/google-gemini_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>adobe-activation</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/adobe-activation_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/adobe-activation_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/adobe-activation/adobe-activation_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/adobe-activation/adobe-activation_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>googlefcm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/googlefcm_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/googlefcm_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/googlefcm/googlefcm_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/googlefcm/googlefcm_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>z-library</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/z-library_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/z-library_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/z-library/z-library_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/z-library/z-library_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>linuxdo</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/linuxdo_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/linuxdo_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/linuxdo/linuxdo_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/linuxdo/linuxdo_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>twitter</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/twitter_IP.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/twitter_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/twitter_IP.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/twitter_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/twitter/twitter_ip.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/twitter/twitter_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/twitter/twitter_ip.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/twitter/twitter_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>github</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/github_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/github_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/github/github_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/github/github_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>gitlab</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/gitlab_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/gitlab_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/gitlab/gitlab_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/gitlab/gitlab_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>onedrive</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/onedrive_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/onedrive_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/onedrive/onedrive_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/onedrive/onedrive_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Microsoft</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Microsoft_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Microsoft_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/microsoft/microsoft_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/microsoft/microsoft_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>openai</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/openai_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/openai_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/openai/openai_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/openai/openai_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>anthropic</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/anthropic_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/anthropic_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/anthropic/anthropic_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/anthropic/anthropic_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>discord</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/discord_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/discord_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/discord/discord_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/discord/discord_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>aliyun</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/aliyun_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/aliyun_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/aliyun/aliyun_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/aliyun/aliyun_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>cloudflare</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/cloudflare_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/cloudflare_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/cloudflare/cloudflare_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/cloudflare/cloudflare_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>docker</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/docker_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/docker_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/docker/docker_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/docker/docker_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>homebrew</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/homebrew_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/homebrew_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/homebrew/homebrew_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/homebrew/homebrew_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>python</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/python_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/python_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/python/python_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/python/python_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>icloud</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/icloud_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/icloud_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/icloud/icloud_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/icloud/icloud_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>apple</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/apple_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/apple_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/apple/apple_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/apple/apple_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>youtube</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/youtube_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/youtube_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/youtube/youtube_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/youtube/youtube_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Google</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Google_IP.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Google_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Google_IP.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Google_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/google/google_ip.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/google/google_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/google/google_ip.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/google/google_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>twitch</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/twitch_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/twitch_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/twitch/twitch_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/twitch/twitch_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>niconico</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/niconico_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/niconico_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/niconico/niconico_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/niconico/niconico_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Pixiv</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Pixiv_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Pixiv_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/pixiv/pixiv_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/pixiv/pixiv_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>netflix</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/netflix_IP.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/netflix_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/netflix_IP.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/netflix_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/netflix/netflix_ip.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/netflix/netflix_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/netflix/netflix_ip.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/netflix/netflix_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>disney</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/disney_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/disney_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/disney/disney_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/disney/disney_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>bilibili</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/bilibili_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/bilibili_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/bilibili/bilibili_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/bilibili/bilibili_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>spotify</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/spotify_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/spotify_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/spotify/spotify_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/spotify/spotify_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>dmm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/dmm_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/dmm_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/dmm/dmm_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/dmm/dmm_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Telegram</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Telegram_IP.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/Telegram_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Telegram_IP.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/Telegram_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/telegram/telegram_ip.json">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/peiyingyao/telegram/telegram_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/telegram/telegram_ip.json">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/peiyingyao/telegram/telegram_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>gfw</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/gfw_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/gfw_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/gfw/gfw_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/gfw/gfw_domain.json">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>applications</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/applications.json">Process Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/applications.json">Process Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/loyalsoldier/applications/applications_process.json">Process Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/loyalsoldier/applications/applications_process.json">Process Only</a></td>
   </tr>
   <tr align="center">
     <td>cn</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/cn_Domain.json">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/cn_Domain.json">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/sing-box/metacubex/cn/cn_domain.json">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/sing-box/metacubex/cn/cn_domain.json">Domain Only</a></td>
   </tr>
 </table>
 
 ### For Clash Kernel - Choose your TYPE
 
-Use `behavior: domain` for Domain files, `behavior: ipcidr` for IP files and `behavior: classical` for applications. All files use YAML.
+Use `behavior: domain` for Domain files, `behavior: ipcidr` for IP files and `behavior: classical` for applications. Set `format: mrs` for MRS files and `format: yaml` for YAML files. MRS supports Mihomo Domain and IP rules; Process rules use YAML.
+
+MRS and YAML files are stored under `clash/mrs/author/service/` and `clash/yaml/author/service/`, for example `clash/mrs/peiyingyao/steam/steam_domain.mrs`.
 
 <table>
   <tr align="center">
@@ -240,199 +244,199 @@ Use `behavior: domain` for Domain files, `behavior: ipcidr` for IP files and `be
   </tr>
   <tr align="center">
     <td>adrules</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/adrules_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/adrules_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/cats-team/adrules/adrules_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/cats-team/adrules/adrules_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/cats-team/adrules/adrules_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/cats-team/adrules/adrules_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>private</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/private_IP.yaml">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/private_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/private_IP.yaml">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/private_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/private/private_ip.mrs">MRS · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/private/private_ip.yaml">YAML · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/private/private_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/private/private_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/private/private_ip.mrs">MRS · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/private/private_ip.yaml">YAML · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/private/private_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/private/private_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Steam</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Steam_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Steam_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/steam/steam_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/steam/steam_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/steam/steam_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/steam/steam_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Copilot</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Copilot_IP.yaml">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Copilot_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Copilot_IP.yaml">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Copilot_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/copilot/copilot_ip.mrs">MRS · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/copilot/copilot_ip.yaml">YAML · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/copilot/copilot_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/copilot/copilot_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/copilot/copilot_ip.mrs">MRS · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/copilot/copilot_ip.yaml">YAML · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/copilot/copilot_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/copilot/copilot_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>google-gemini</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/google-gemini_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/google-gemini_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/google-gemini/google-gemini_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/google-gemini/google-gemini_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/google-gemini/google-gemini_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/google-gemini/google-gemini_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>adobe-activation</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/adobe-activation_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/adobe-activation_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/adobe-activation/adobe-activation_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/adobe-activation/adobe-activation_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/adobe-activation/adobe-activation_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/adobe-activation/adobe-activation_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>googlefcm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/googlefcm_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/googlefcm_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/googlefcm/googlefcm_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/googlefcm/googlefcm_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/googlefcm/googlefcm_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/googlefcm/googlefcm_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>z-library</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/z-library_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/z-library_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/z-library/z-library_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/z-library/z-library_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/z-library/z-library_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/z-library/z-library_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>linuxdo</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/linuxdo_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/linuxdo_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/linuxdo/linuxdo_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/linuxdo/linuxdo_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/linuxdo/linuxdo_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/linuxdo/linuxdo_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>twitter</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/twitter_IP.yaml">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/twitter_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/twitter_IP.yaml">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/twitter_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/twitter/twitter_ip.mrs">MRS · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/twitter/twitter_ip.yaml">YAML · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/twitter/twitter_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/twitter/twitter_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/twitter/twitter_ip.mrs">MRS · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/twitter/twitter_ip.yaml">YAML · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/twitter/twitter_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/twitter/twitter_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>github</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/github_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/github_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/github/github_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/github/github_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/github/github_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/github/github_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>gitlab</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/gitlab_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/gitlab_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/gitlab/gitlab_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/gitlab/gitlab_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/gitlab/gitlab_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/gitlab/gitlab_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>onedrive</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/onedrive_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/onedrive_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/onedrive/onedrive_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/onedrive/onedrive_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/onedrive/onedrive_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/onedrive/onedrive_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Microsoft</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Microsoft_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Microsoft_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/microsoft/microsoft_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/microsoft/microsoft_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/microsoft/microsoft_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/microsoft/microsoft_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>openai</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/openai_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/openai_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/openai/openai_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/openai/openai_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/openai/openai_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/openai/openai_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>anthropic</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/anthropic_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/anthropic_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/anthropic/anthropic_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/anthropic/anthropic_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/anthropic/anthropic_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/anthropic/anthropic_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>discord</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/discord_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/discord_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/discord/discord_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/discord/discord_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/discord/discord_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/discord/discord_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>aliyun</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/aliyun_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/aliyun_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/aliyun/aliyun_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/aliyun/aliyun_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/aliyun/aliyun_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/aliyun/aliyun_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>cloudflare</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/cloudflare_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cloudflare_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/cloudflare/cloudflare_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/cloudflare/cloudflare_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/cloudflare/cloudflare_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/cloudflare/cloudflare_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>docker</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/docker_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/docker_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/docker/docker_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/docker/docker_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/docker/docker_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/docker/docker_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>homebrew</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/homebrew_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/homebrew_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/homebrew/homebrew_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/homebrew/homebrew_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/homebrew/homebrew_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/homebrew/homebrew_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>python</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/python_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/python_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/python/python_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/python/python_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/python/python_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/python/python_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>icloud</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/icloud_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/icloud_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/icloud/icloud_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/icloud/icloud_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/icloud/icloud_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/icloud/icloud_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>apple</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/apple_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/apple_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/apple/apple_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/apple/apple_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/apple/apple_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/apple/apple_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>youtube</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/youtube_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/youtube_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/youtube/youtube_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/youtube/youtube_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/youtube/youtube_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/youtube/youtube_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Google</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Google_IP.yaml">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Google_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Google_IP.yaml">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Google_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/google/google_ip.mrs">MRS · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/google/google_ip.yaml">YAML · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/google/google_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/google/google_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/google/google_ip.mrs">MRS · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/google/google_ip.yaml">YAML · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/google/google_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/google/google_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>twitch</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/twitch_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/twitch_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/twitch/twitch_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/twitch/twitch_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/twitch/twitch_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/twitch/twitch_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>niconico</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/niconico_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/niconico_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/niconico/niconico_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/niconico/niconico_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/niconico/niconico_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/niconico/niconico_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Pixiv</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Pixiv_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Pixiv_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/pixiv/pixiv_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/pixiv/pixiv_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/pixiv/pixiv_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/pixiv/pixiv_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>netflix</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/netflix_IP.yaml">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/netflix_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/netflix_IP.yaml">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/netflix_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/netflix/netflix_ip.mrs">MRS · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/netflix/netflix_ip.yaml">YAML · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/netflix/netflix_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/netflix/netflix_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/netflix/netflix_ip.mrs">MRS · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/netflix/netflix_ip.yaml">YAML · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/netflix/netflix_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/netflix/netflix_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>disney</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/disney_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/disney_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/disney/disney_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/disney/disney_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/disney/disney_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/disney/disney_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>bilibili</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/bilibili_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/bilibili_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/bilibili/bilibili_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/bilibili/bilibili_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/bilibili/bilibili_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/bilibili/bilibili_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>spotify</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/spotify_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/spotify_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/spotify/spotify_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/spotify/spotify_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/spotify/spotify_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/spotify/spotify_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>dmm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/dmm_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/dmm_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/dmm/dmm_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/dmm/dmm_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/dmm/dmm_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/dmm/dmm_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Telegram</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Telegram_IP.yaml">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/Telegram_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Telegram_IP.yaml">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Telegram_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/telegram/telegram_ip.mrs">MRS · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/telegram/telegram_ip.yaml">YAML · IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/telegram/telegram_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/telegram/telegram_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/telegram/telegram_ip.mrs">MRS · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/telegram/telegram_ip.yaml">YAML · IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/telegram/telegram_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/telegram/telegram_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>gfw</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/gfw_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/gfw_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/gfw/gfw_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/gfw/gfw_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/gfw/gfw_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/gfw/gfw_domain.yaml">YAML · Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>applications</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/applications.yaml">Process Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/applications.yaml">Process Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/loyalsoldier/applications/applications_process.yaml">YAML · Process Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/loyalsoldier/applications/applications_process.yaml">YAML · Process Only</a></td>
   </tr>
   <tr align="center">
     <td>cn</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/cn_Domain.yaml">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cn_Domain.yaml">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/cn/cn_domain.mrs">MRS · Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/cn/cn_domain.yaml">YAML · Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/cn/cn_domain.mrs">MRS · Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/cn/cn_domain.yaml">YAML · Domain Only</a></td>
   </tr>
 </table>
 
 ### For Surge Kernel - Choose your TYPE
 
-Use `DOMAIN-SET` for domain files and `RULE-SET` for IP and applications files. IP files contain `IP-CIDR` / `IP-CIDR6` entries with `no-resolve`.
+Use `DOMAIN-SET` for Domain files and `RULE-SET` for the other types. Existing IP conversions add `no-resolve`; split Surge IP files preserve upstream options. The table lists only categories that contain upstream rules; empty categories produce no files. When upstream adds a category or removes its last rule, the sync updates the category files, links below and the repository's Surge example profile.
 
 <table>
   <tr align="center">
@@ -441,193 +445,340 @@ Use `DOMAIN-SET` for domain files and `RULE-SET` for IP and applications files. 
     <td><b>View or Download by a CDN Link</b></td>
   </tr>
   <tr align="center">
-    <td>adrules</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/adrules_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/adrules_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
     <td>private</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/private_IP.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/private_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/private_IP.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/private_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>Steam</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Steam_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Steam_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/private/private_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/private/private_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/private/private_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/private/private_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Copilot</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Copilot_IP.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Copilot_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Copilot_IP.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Copilot_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>google-gemini</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/google-gemini_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/google-gemini_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/copilot/copilot_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/copilot/copilot_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/copilot/copilot_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/copilot/copilot_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>adobe-activation</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/adobe-activation_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/adobe-activation_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/adobe-activation/adobe-activation_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/adobe-activation/adobe-activation_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>googlefcm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/googlefcm_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/googlefcm_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/googlefcm/googlefcm_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/googlefcm/googlefcm_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>z-library</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/z-library_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/z-library_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>linuxdo</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/linuxdo_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/linuxdo_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/z-library/z-library_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/z-library/z-library_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>twitter</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/twitter_IP.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/twitter_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/twitter_IP.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/twitter_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/twitter/twitter_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/twitter/twitter_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/twitter/twitter_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/twitter/twitter_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>github</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/github_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/github_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>gitlab</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/gitlab_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/gitlab_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/github/github_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/github/github_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>onedrive</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/onedrive_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/onedrive_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/onedrive/onedrive_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/onedrive/onedrive_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Microsoft</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Microsoft_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Microsoft_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/microsoft/microsoft_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/microsoft/microsoft_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>openai</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/openai_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/openai_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/openai/openai_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/openai/openai_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>anthropic</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/anthropic_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/anthropic_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/anthropic/anthropic_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/anthropic/anthropic_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>discord</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/discord_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/discord_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>aliyun</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/aliyun_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/aliyun_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>cloudflare</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/cloudflare_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/cloudflare_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/discord/discord_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/discord/discord_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>docker</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/docker_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/docker_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>homebrew</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/homebrew_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/homebrew_Domain.list">Domain Only</a></td>
-  </tr>
-  <tr align="center">
-    <td>python</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/python_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/python_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/docker/docker_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/docker/docker_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>icloud</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/icloud_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/icloud_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/icloud/icloud_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/icloud/icloud_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>apple</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/apple_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/apple_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/apple/apple_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/apple/apple_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>youtube</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/youtube_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/youtube_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/youtube/youtube_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/youtube/youtube_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Google</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Google_IP.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Google_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Google_IP.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Google_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/google/google_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/google/google_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/google/google_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/google/google_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>twitch</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/twitch_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/twitch_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/twitch/twitch_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/twitch/twitch_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>niconico</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/niconico_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/niconico_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/niconico/niconico_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/niconico/niconico_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Pixiv</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Pixiv_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Pixiv_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/pixiv/pixiv_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/pixiv/pixiv_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>netflix</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/netflix_IP.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/netflix_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/netflix_IP.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/netflix_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/netflix/netflix_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/netflix/netflix_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/netflix/netflix_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/netflix/netflix_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>disney</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/disney_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/disney_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/disney/disney_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/disney/disney_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>bilibili</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/bilibili_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/bilibili_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/bilibili/bilibili_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/bilibili/bilibili_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>spotify</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/spotify_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/spotify_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/spotify/spotify_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/spotify/spotify_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>dmm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/dmm_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/dmm_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/dmm/dmm_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/dmm/dmm_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>Telegram</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Telegram_IP.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/Telegram_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Telegram_IP.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/Telegram_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/telegram/telegram_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/telegram/telegram_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/telegram/telegram_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/telegram/telegram_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>gfw</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/gfw_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/gfw_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/gfw/gfw_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/gfw/gfw_domain.list">Domain Only</a></td>
   </tr>
   <tr align="center">
     <td>applications</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/applications.list">Process Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/applications.list">Process Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/loyalsoldier/applications/applications_process.list">Process Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/loyalsoldier/applications/applications_process.list">Process Only</a></td>
   </tr>
   <tr align="center">
     <td>cn</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/cn_Domain.list">Domain Only</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/cn_Domain.list">Domain Only</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/cn/cn_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/cn/cn_domain.list">Domain Only</a></td>
   </tr>
+<!-- synced-surge-rules:begin -->
+  <tr align="center">
+    <td>CatsTeam_AdRules</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/cats-team/adrules/adrules_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/cats-team/adrules/adrules_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Lan</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/lan/lan_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/lan/lan_ip.list">IP Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/lan/lan_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/lan/lan_ip.list">IP Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>RuleForOCD_Steam</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/steam/steam_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/peiyingyao/steam/steam_keyword.list">Keyword Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/steam/steam_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/peiyingyao/steam/steam_keyword.list">Keyword Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_AdobeActivation</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/adobeactivation/adobeactivation_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/adobeactivation/adobeactivation_ip.list">IP Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/adobeactivation/adobeactivation_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/adobeactivation/adobeactivation_ip.list">IP Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_GoogleFCM</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/googlefcm/googlefcm_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/googlefcm/googlefcm_ip.list">IP Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/googlefcm/googlefcm_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/googlefcm/googlefcm_ip.list">IP Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Geosite2Surge_z-library</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/coderbean/z-library/z-library_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/coderbean/z-library/z-library_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_linuxdo</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/linuxdo/linuxdo_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/linuxdo/linuxdo_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Twitter</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitter/twitter_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitter/twitter_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitter/twitter_keyword.list">Keyword Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitter/twitter_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitter/twitter_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitter/twitter_keyword.list">Keyword Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Claude</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/claude/claude_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/claude/claude_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_OpenAI</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/openai/openai_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/openai/openai_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/openai/openai_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/openai/openai_asn.list">ASN Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/openai/openai_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/openai/openai_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/openai/openai_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/openai/openai_asn.list">ASN Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Copilot</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/copilot/copilot_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/copilot/copilot_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/copilot/copilot_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/copilot/copilot_asn.list">ASN Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/copilot/copilot_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/copilot/copilot_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/copilot/copilot_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/copilot/copilot_asn.list">ASN Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_google-gemini</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/google-gemini/google-gemini_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/google-gemini/google-gemini_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_GitHub</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/github/github_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/github/github_keyword.list">Keyword Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/github/github_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/github/github_keyword.list">Keyword Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_gitlab</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/gitlab/gitlab_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/gitlab/gitlab_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_OneDrive</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/onedrive/onedrive_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/onedrive/onedrive_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/onedrive/onedrive_process.list">Process Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/onedrive/onedrive_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/onedrive/onedrive_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/onedrive/onedrive_process.list">Process Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Microsoft</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/microsoft/microsoft_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/microsoft/microsoft_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/microsoft/microsoft_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/microsoft/microsoft_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/microsoft/microsoft_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/microsoft/microsoft_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/microsoft/microsoft_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/microsoft/microsoft_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Discord</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/discord/discord_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/discord/discord_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_aliyun</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/aliyun/aliyun_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/aliyun/aliyun_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_cloudflare</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/cloudflare/cloudflare_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/cloudflare/cloudflare_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Docker</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/docker/docker_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/docker/docker_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_homebrew</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/homebrew/homebrew_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/homebrew/homebrew_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>MetaCubeX_python</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/metacubex/python/python_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/metacubex/python/python_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_iCloud</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/icloud/icloud_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/icloud/icloud_keyword.list">Keyword Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/icloud/icloud_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/icloud/icloud_keyword.list">Keyword Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_AppleDomain</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/apple/apple_domainset.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/apple/apple_domainset.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Apple</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/apple/apple_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/apple/apple_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/apple/apple_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/apple/apple_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/apple/apple_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/apple/apple_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/apple/apple_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/apple/apple_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_YouTube</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/youtube/youtube_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/youtube/youtube_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/youtube/youtube_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/youtube/youtube_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/youtube/youtube_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/youtube/youtube_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/youtube/youtube_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/youtube/youtube_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Google</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/google/google_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/google/google_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/google/google_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/google/google_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/google/google_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/google/google_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/google/google_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/google/google_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/google/google_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/google/google_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Twitch</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitch/twitch_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitch/twitch_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitch/twitch_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/twitch/twitch_process.list">Process Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitch/twitch_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitch/twitch_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitch/twitch_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/twitch/twitch_process.list">Process Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Niconico</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/niconico/niconico_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/niconico/niconico_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/niconico/niconico_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/niconico/niconico_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Pixiv</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/pixiv/pixiv_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/pixiv/pixiv_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Netflix</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/netflix/netflix_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/netflix/netflix_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/netflix/netflix_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/netflix/netflix_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/netflix/netflix_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/netflix/netflix_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/netflix/netflix_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/netflix/netflix_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/netflix/netflix_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/netflix/netflix_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Disney</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/disney/disney_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/disney/disney_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/disney/disney_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/disney/disney_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/disney/disney_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/disney/disney_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_BiliBili</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/bilibili/bilibili_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/bilibili/bilibili_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/bilibili/bilibili_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/bilibili/bilibili_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/bilibili/bilibili_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/bilibili/bilibili_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/bilibili/bilibili_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/bilibili/bilibili_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Spotify</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/spotify/spotify_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/spotify/spotify_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/spotify/spotify_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/spotify/spotify_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/spotify/spotify_useragent.list">User-Agent Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/spotify/spotify_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/spotify/spotify_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/spotify/spotify_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/spotify/spotify_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/spotify/spotify_useragent.list">User-Agent Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_DMM</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/dmm/dmm_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/dmm/dmm_ip.list">IP Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/dmm/dmm_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/dmm/dmm_ip.list">IP Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Blackmatrix7_Telegram</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/telegram/telegram_domain.list">Domain Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/telegram/telegram_ip.list">IP Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/telegram/telegram_keyword.list">Keyword Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/telegram/telegram_process.list">Process Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/telegram/telegram_asn.list">ASN Only</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/blackmatrix7/telegram/telegram_logical.list">Logical Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/telegram/telegram_domain.list">Domain Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/telegram/telegram_ip.list">IP Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/telegram/telegram_keyword.list">Keyword Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/telegram/telegram_process.list">Process Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/telegram/telegram_asn.list">ASN Only</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/blackmatrix7/telegram/telegram_logical.list">Logical Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Loyalsoldier_gfw</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/loyalsoldier/gfw/gfw_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/loyalsoldier/gfw/gfw_domain.list">Domain Only</a></td>
+  </tr>
+  <tr align="center">
+    <td>Loyalsoldier_direct</td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/surge/loyalsoldier/direct/direct_domain.list">Domain Only</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/surge/loyalsoldier/direct/direct_domain.list">Domain Only</a></td>
+  </tr>
+<!-- synced-surge-rules:end -->
 </table>
