@@ -11,13 +11,11 @@ on:
     paths:
       - "workflow_scripts/sync_third_party_rules.py"
       - "workflow_scripts/build_rules.py"
-      - "client_conf/mihomo_override/mihomo_override.js"
       - ".github/workflows/sync-third-party-rules.yml"
   pull_request:
     paths:
       - "workflow_scripts/sync_third_party_rules.py"
       - "workflow_scripts/build_rules.py"
-      - "client_conf/mihomo_override/mihomo_override.js"
       - ".github/workflows/sync-third-party-rules.yml"
       - "third_party/**"
 

@@ -482,5 +482,203 @@
       "surge": "surge/cn_Domain.list",
       "sing-box": "sing-box/cn_Domain.json"
     }
+  },
+  "lan_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list",
+    "sha256": "4defb821f8900e6a2c3b1e1b8d12fefc8cfc190f9e6f5cdd5219eda8ed304532",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/Lan_Classical.list"
+    }
+  },
+  "steam_classical": {
+    "source": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/master/rule/Surge/Steam/Steam.list",
+    "sha256": "35826051b8797c7636210389fafadea23a16af51378feee20ededbb652b43332",
+    "kind": "Surge",
+    "notices": "licenses/Rule-for-OCD/LICENSE",
+    "outputs": {
+      "surge": "surge/Steam_Classical.list"
+    }
+  },
+  "adobeactivation_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AdobeActivation/AdobeActivation.list",
+    "sha256": "a8437015fd61d6d2480bbc33217bded475297f43f0e4906f3a1b737477bd6006",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/adobe-activation_Classical.list"
+    }
+  },
+  "googlefcm_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleFCM/GoogleFCM.list",
+    "sha256": "9794f848f2935db94be703f797921f8c512a1ddd213c20c47c1f884dccbd82ca",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/googlefcm_Classical.list"
+    }
+  },
+  "twitter_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list",
+    "sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/twitter_Classical.list"
+    }
+  },
+  "openai_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list",
+    "sha256": "6f4047cdbf6953cf5d9b38c4ccd6da7bc6f1acb91b7a87134f25d5b8f5d2408b",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/openai_Classical.list"
+    }
+  },
+  "copilot_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Copilot/Copilot.list",
+    "sha256": "12773330de34b84b7fd2f3f2af598480ea62d8574d8e9b8ae9d011a53c044d39",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/Copilot_Classical.list"
+    }
+  },
+  "github_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list",
+    "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/github_Classical.list"
+    }
+  },
+  "onedrive_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OneDrive/OneDrive.list",
+    "sha256": "c13255b88e542f92ce26a8cca4367adcea81f9f04e00a41d03dc4869caa070ea",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/onedrive_Classical.list"
+    }
+  },
+  "microsoft_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list",
+    "sha256": "a2854b28dc9f903a64933c74fff5b50166e9bbebc70fdfce18c592f75793ff14",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/Microsoft_Classical.list"
+    }
+  },
+  "icloud_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/iCloud/iCloud.list",
+    "sha256": "e34e2c63cb431ab0a1838d218aba4d8ddb102774f49727f3de44bc8261227475",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/icloud_Classical.list"
+    }
+  },
+  "apple_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list",
+    "sha256": "7b2453f8dba3e9a35d67ea53e3c932b3ede766a2d2b28d719a3cd92f2146d854",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/apple_Classical.list"
+    }
+  },
+  "youtube_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list",
+    "sha256": "42274e143447066e26e1ebbf21ae03ce6efb40827f41e2775a84fb16d390713d",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/youtube_Classical.list"
+    }
+  },
+  "google_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list",
+    "sha256": "4b08fd3ef47e2668d2a4bb79777773e2408394fdda60ac36014e1a4d3456ba6f",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/Google_Classical.list"
+    }
+  },
+  "twitch_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitch/Twitch.list",
+    "sha256": "5f1e5ba766fcef3196ea6f03e05c1859af7d1122338beaceaea2919b6c82f7a8",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/twitch_Classical.list"
+    }
+  },
+  "niconico_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Niconico/Niconico.list",
+    "sha256": "88c2662a8ebcffaf6d6a5b92ebbc1368eb13dc87e998cb4d29ba8f5a23e5f8bd",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/niconico_Classical.list"
+    }
+  },
+  "netflix_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list",
+    "sha256": "aa03f015949e8f6f981d90a7d8b1acf7e88472ee48601632bd964b0bb740f8aa",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/netflix_Classical.list"
+    }
+  },
+  "disney_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list",
+    "sha256": "d0cfd6aee89d9d3075aef9dfadd98a2a3c6a2dba487f5091c801d1bcd70e9884",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/disney_Classical.list"
+    }
+  },
+  "bilibili_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list",
+    "sha256": "8537129301d5e4040d9f2b2255217458a16c96eef850ec22367352c512bc3988",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/bilibili_Classical.list"
+    }
+  },
+  "spotify_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list",
+    "sha256": "33bd52e8f23cda9374876259621c8fba21554035e20fa55daffbfcaee2109079",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/spotify_Classical.list"
+    }
+  },
+  "dmm_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DMM/DMM.list",
+    "sha256": "255c924e26503a11d8f1d96b696ca623140686c7d34512c935fef27210f8b0b4",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/dmm_Classical.list"
+    }
+  },
+  "telegram_classical": {
+    "source": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list",
+    "sha256": "3b375bee8b2ff16d6c955804a5a3638e6e8fdfcc58d209506a928bdd4cc9891a",
+    "kind": "Surge",
+    "notices": "licenses/blackmatrix7-LICENSE",
+    "outputs": {
+      "surge": "surge/Telegram_Classical.list"
+    }
   }
 }

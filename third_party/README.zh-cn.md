@@ -4,7 +4,7 @@
 
 ## 项目介绍
 
-同步 Mihomo override 中使用的全部第三方规则，并提供 Clash、Surge 和 sing-box 三种格式。自有规则仍位于原有 `artifact/` 目录。
+按固定清单同步第三方规则，提供 Clash、Surge 和 sing-box 三种转换格式，并镜像完整的 Surge 原生规则集。自有规则仍位于原有 `artifact/` 目录。
 
 **更新频率**：每天定时同步一次，计划在香港时间（UTC+8，与北京时间相同）凌晨 **03:23** 触发，对应前一天 UTC **19:23**。
 
@@ -12,9 +12,9 @@
 
 ## 维护方式
 
-同步清单直接读取 `client_conf/mihomo_override/mihomo_override.js` 的 `ruleProviders`，不另行维护一份应用列表。Workflow 运行 `python workflow_scripts/sync_third_party_rules.py`，从原发布者下载可读文本，复用现有转换器生成三种格式，并更新来源清单。许可文件保留固定副本，变更需人工审核。
+同步清单固定在 `workflow_scripts/sync_third_party_rules.py` 的 `UPSTREAM_RULES` 中，每项明确上游地址、规则类型和产物名称；修改同步范围时编辑该清单。客户端配置引用生成的规则文件，`third_party/sources.json` 记录每次同步结果。Workflow 运行 `python workflow_scripts/sync_third_party_rules.py`，将 Domain/IP/Process 来源转换为三种格式，Surge 原生来源只生成 Surge 规则集镜像。原生镜像保留上游完整内容和说明，包括关键词、ASN、User-Agent、进程及逻辑规则。许可文件保留固定副本，变更需人工审核。
 
-全部来源和转换验证成功后才更新产物。任何下载、内容或转换失败都会使 Workflow 失败且不提交新规则，已发布文件继续保留。内容不变时不生成提交。可在 Actions 中手动运行 Sync Third-Party Rules。
+成功同步时，各产物以当前上游内容覆盖更新，不从旧副本合并已删除的条目。上游仓库或文件返回 HTTP 404/410 时，保留该来源的现有文件和最后成功的来源记录，其他来源继续同步。缺失来源没有匹配的本地副本、其他下载错误或内容无效时，Workflow 失败且不提交新规则，已发布文件继续保留。全部可用来源验证成功后才更新产物。内容不变时不生成提交。可在 Actions 中手动运行 Sync Third-Party Rules。
 
 请在上游维护第三方规则，不要手动编辑生成文件。转换保留匹配分类，不添加分流出口。
 
@@ -429,6 +429,35 @@ Domain 文件使用 `behavior: domain`，IP 文件使用 `behavior: ipcidr`，ap
     <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cn_Domain.yaml">仅域名</a></td>
   </tr>
 </table>
+
+### 完整的 Surge 原生规则集
+
+这些镜像使用 `RULE-SET`，保留对应上游文件中的全部规则类型，仅适用于 Surge。下方原有的 Domain/IP 链接继续独立提供。
+
+| Source | Mirror |
+| --- | --- |
+| lan_classical | [完整规则集](surge/Lan_Classical.list) |
+| steam_classical | [完整规则集](surge/Steam_Classical.list) |
+| adobeactivation_classical | [完整规则集](surge/adobe-activation_Classical.list) |
+| googlefcm_classical | [完整规则集](surge/googlefcm_Classical.list) |
+| twitter_classical | [完整规则集](surge/twitter_Classical.list) |
+| openai_classical | [完整规则集](surge/openai_Classical.list) |
+| copilot_classical | [完整规则集](surge/Copilot_Classical.list) |
+| github_classical | [完整规则集](surge/github_Classical.list) |
+| onedrive_classical | [完整规则集](surge/onedrive_Classical.list) |
+| microsoft_classical | [完整规则集](surge/Microsoft_Classical.list) |
+| icloud_classical | [完整规则集](surge/icloud_Classical.list) |
+| apple_classical | [完整规则集](surge/apple_Classical.list) |
+| youtube_classical | [完整规则集](surge/youtube_Classical.list) |
+| google_classical | [完整规则集](surge/Google_Classical.list) |
+| twitch_classical | [完整规则集](surge/twitch_Classical.list) |
+| niconico_classical | [完整规则集](surge/niconico_Classical.list) |
+| netflix_classical | [完整规则集](surge/netflix_Classical.list) |
+| disney_classical | [完整规则集](surge/disney_Classical.list) |
+| bilibili_classical | [完整规则集](surge/bilibili_Classical.list) |
+| spotify_classical | [完整规则集](surge/spotify_Classical.list) |
+| dmm_classical | [完整规则集](surge/dmm_Classical.list) |
+| telegram_classical | [完整规则集](surge/Telegram_Classical.list) |
 
 ### 适用于 Surge 内核 - 选择您的类型
 

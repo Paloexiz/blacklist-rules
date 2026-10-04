@@ -236,30 +236,25 @@ const ruleProviderYaml = {
   "format": "yaml",
   "interval": 86400
 };
-const ruleProviderMrs = {
-  "type": "http",
-  "format": "mrs",
-  "interval": 86400
-};
 // Rule Providers configuration
 const ruleProviders = {
   "adrules": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules-mihomo.mrs",
-    "path": "./ruleset/cats-team/adrules.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/adrules_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/adrules_Domain.yaml"
   },
   "private_ip": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "ipcidr",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/private.mrs",
-    "path": "./ruleset/metacubex/private_ip.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/private_IP.yaml",
+    "path": "./ruleset/paloexiz/third_party/private_IP.yaml"
   },
   "private_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/private.mrs",
-    "path": "./ruleset/metacubex/private_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/private_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/private_Domain.yaml"
   },
   "blacklistrules-unlock_game": {
     ...ruleProviderYaml,
@@ -298,46 +293,46 @@ const ruleProviders = {
     "path": "./ruleset/paloexiz/slowdomains_nogame_domainonly.yaml"
   },
   "steam": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Steam/Steam_OCD_Domain.mrs",
-    "path": "./ruleset/peiyingyao/steam.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Steam_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/Steam_Domain.yaml"
   },
   "copilot_ip": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "ipcidr",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Copilot/Copilot_OCD_IP.mrs",
-    "path": "./ruleset/peiyingyao/copilot_ip.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Copilot_IP.yaml",
+    "path": "./ruleset/paloexiz/third_party/Copilot_IP.yaml"
   },
   "copilot_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Copilot/Copilot_OCD_Domain.mrs",
-    "path": "./ruleset/peiyingyao/copilot_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Copilot_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/Copilot_Domain.yaml"
   },
   "gemini": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/google-gemini.mrs",
-    "path": "./ruleset/metacubex/gemini.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/google-gemini_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/google-gemini_Domain.yaml"
   },
   "adobeactivation": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/adobe-activation.mrs",
-    "path": "./ruleset/metacubex/adobeactivation.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/adobe-activation_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/adobe-activation_Domain.yaml"
   },
   "googlefcm": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/googlefcm.mrs",
-    "path": "./ruleset/metacubex/googlefcm.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/googlefcm_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/googlefcm_Domain.yaml"
   },
   "z-library": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/z-library.mrs",
-    "path": "./ruleset/metacubex/z-library.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/z-library_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/z-library_Domain.yaml"
   },
   "bluesky": {
     ...ruleProviderYaml,
@@ -346,208 +341,208 @@ const ruleProviders = {
     "path": "./ruleset/paloexiz/bluesky.yaml"
   },
   "linuxdo": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/linuxdo.mrs",
-    "path": "./ruleset/metacubex/linuxdo.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/linuxdo_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/linuxdo_Domain.yaml"
   },
   "twitter_ip": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "ipcidr",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/twitter.mrs",
-    "path": "./ruleset/metacubex/twitter_ip.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/twitter_IP.yaml",
+    "path": "./ruleset/paloexiz/third_party/twitter_IP.yaml"
   },
   "twitter_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitter.mrs",
-    "path": "./ruleset/metacubex/twitter_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/twitter_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/twitter_Domain.yaml"
   },
   "github": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/github.mrs",
-    "path": "./ruleset/metacubex/github.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/github_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/github_Domain.yaml"
   },
   "gitlab": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gitlab.mrs",
-    "path": "./ruleset/metacubex/gitlab.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/gitlab_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/gitlab_Domain.yaml"
   },
   "onedrive": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/onedrive.mrs",
-    "path": "./ruleset/metacubex/onedrive.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/onedrive_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/onedrive_Domain.yaml"
   },
   "microsoft": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Microsoft/Microsoft_OCD_Domain.mrs",
-    "path": "./ruleset/peiyingyao/microsoft.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Microsoft_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/Microsoft_Domain.yaml"
   },
   "openai": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/openai.mrs",
-    "path": "./ruleset/metacubex/openai.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/openai_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/openai_Domain.yaml"
   },
   "anthropic": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/anthropic.mrs",
-    "path": "./ruleset/metacubex/anthropic.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/anthropic_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/anthropic_Domain.yaml"
   },
   "discord": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/discord.mrs",
-    "path": "./ruleset/metacubex/discord.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/discord_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/discord_Domain.yaml"
   },
   "aliyun": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/aliyun.mrs",
-    "path": "./ruleset/metacubex/aliyun.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/aliyun_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/aliyun_Domain.yaml"
   },
   "cloudflare": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.mrs",
-    "path": "./ruleset/metacubex/cloudflare.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cloudflare_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/cloudflare_Domain.yaml"
   },
   "docker": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/docker.mrs",
-    "path": "./ruleset/metacubex/docker.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/docker_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/docker_Domain.yaml"
   },
   "homebrew": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/homebrew.mrs",
-    "path": "./ruleset/metacubex/homebrew.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/homebrew_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/homebrew_Domain.yaml"
   },
   "python": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/python.mrs",
-    "path": "./ruleset/metacubex/python.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/python_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/python_Domain.yaml"
   },
   "icloud": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/icloud.mrs",
-    "path": "./ruleset/metacubex/icloud.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/icloud_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/icloud_Domain.yaml"
   },
   "apple": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple.mrs",
-    "path": "./ruleset/metacubex/apple.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/apple_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/apple_Domain.yaml"
   },
   "youtube": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/youtube.mrs",
-    "path": "./ruleset/metacubex/youtube.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/youtube_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/youtube_Domain.yaml"
   },
   "google_ip": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "ipcidr",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Google/Google_OCD_IP.mrs",
-    "path": "./ruleset/peiyingyao/google_ip.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Google_IP.yaml",
+    "path": "./ruleset/paloexiz/third_party/Google_IP.yaml"
   },
   "google_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Google/Google_OCD_Domain.mrs",
-    "path": "./ruleset/peiyingyao/google_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Google_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/Google_Domain.yaml"
   },
   "twitch": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitch.mrs",
-    "path": "./ruleset/metacubex/twitch.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/twitch_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/twitch_Domain.yaml"
   },
   "niconico": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/niconico.mrs",
-    "path": "./ruleset/metacubex/niconico.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/niconico_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/niconico_Domain.yaml"
   },
   "pixiv": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Pixiv/Pixiv_OCD_Domain.mrs",
-    "path": "./ruleset/peiyingyao/pixiv.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Pixiv_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/Pixiv_Domain.yaml"
   },
   "netflix_ip": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "ipcidr",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/netflix.mrs",
-    "path": "./ruleset/metacubex/netflix_ip.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/netflix_IP.yaml",
+    "path": "./ruleset/paloexiz/third_party/netflix_IP.yaml"
   },
   "netflix_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/netflix.mrs",
-    "path": "./ruleset/metacubex/netflix_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/netflix_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/netflix_Domain.yaml"
   },
   "disney": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/disney.mrs",
-    "path": "./ruleset/metacubex/disney.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/disney_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/disney_Domain.yaml"
   },
   "bilibili": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/bilibili.mrs",
-    "path": "./ruleset/metacubex/bilibili.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/bilibili_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/bilibili_Domain.yaml"
   },
   "spotify": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/spotify.mrs",
-    "path": "./ruleset/metacubex/spotify.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/spotify_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/spotify_Domain.yaml"
   },
   "dmm": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/dmm.mrs",
-    "path": "./ruleset/metacubex/dmm.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/dmm_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/dmm_Domain.yaml"
   },
   "telegram_ip": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "ipcidr",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Telegram/Telegram_OCD_IP.mrs",
-    "path": "./ruleset/peiyingyao/telegram_ip.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Telegram_IP.yaml",
+    "path": "./ruleset/paloexiz/third_party/Telegram_IP.yaml"
   },
   "telegram_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/peiyingyao/Rule-for-OCD@master/rule/Clash/Telegram/Telegram_OCD_Domain.mrs",
-    "path": "./ruleset/peiyingyao/telegram_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/Telegram_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/Telegram_Domain.yaml"
   },
   "gfw": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/gfw.mrs",
-    "path": "./ruleset/metacubex/gfw.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/gfw_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/gfw_Domain.yaml"
   },
   "applications": {
     ...ruleProviderYaml,
     "behavior": "classical",
-    "url": "https://fastly.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt",
-    "path": "./ruleset/loyalsoldier/applications.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/applications.yaml",
+    "path": "./ruleset/paloexiz/third_party/applications.yaml"
   },
   "cn_domain": {
-    ...ruleProviderMrs,
+    ...ruleProviderYaml,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.mrs",
-    "path": "./ruleset/metacubex/cn_domain.mrs"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cn_Domain.yaml",
+    "path": "./ruleset/paloexiz/third_party/cn_Domain.yaml"
   }
 };
 // Rules

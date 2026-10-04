@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Synchronizes every third-party provider used by the Mihomo override in Clash, Surge and sing-box formats. Custom rules remain in the existing `artifact/` directories.
+Synchronizes a fixed list of upstream rules in Clash, Surge and sing-box formats, plus complete native Surge rule sets. Custom rules remain in the existing `artifact/` directories.
 
 **Update frequency**: one scheduled sync per day, at **03:23** Hong Kong time (UTC+8, the same as Beijing time), corresponding to **19:23 UTC on the previous day**.
 
@@ -12,9 +12,9 @@ The schedule takes effect after the [workflow](../.github/workflows/sync-third-p
 
 ## Repository Maintenance
 
-The provider inventory is read directly from `ruleProviders` in `client_conf/mihomo_override/mihomo_override.js`. The workflow runs `python workflow_scripts/sync_third_party_rules.py`, downloads readable upstream sources, reuses the existing converter for all three formats, and updates the source manifest. License files remain fixed copies and are maintained through manual review.
+The sync inventory is fixed in `UPSTREAM_RULES` in `workflow_scripts/sync_third_party_rules.py`. Each entry specifies its upstream URL, rule type and output name. Edit this list to change the sync scope. Client profiles use the generated files; `third_party/sources.json` records the results of each sync. The workflow runs `python workflow_scripts/sync_third_party_rules.py`, converts Domain/IP/Process sources into all three formats, and mirrors native Surge sources only as Surge rule sets. Native mirrors preserve the complete upstream content and notices, including keyword, ASN, user-agent, process and logical rules. License files remain fixed copies and are maintained through manual review.
 
-All sources and conversions are validated before outputs are updated. A download, content or conversion failure prevents publication and preserves the previously published files. Unchanged contents create no commit. Run Sync Third-Party Rules manually from Actions when needed.
+Successful syncs replace each output with the current upstream content; removed entries are not merged back from old copies. If an upstream repository or file returns HTTP 404/410, its existing files and last successful source record remain unchanged while other sources continue syncing. A missing source without a matching local copy, other download failures, or invalid content prevent publication and preserve the previously published files. All available sources are validated before outputs are updated. Unchanged contents create no commit. Run Sync Third-Party Rules manually from Actions when needed.
 
 Maintain third-party rules upstream rather than editing generated files. Conversion preserves matching categories and adds no routing policies.
 
@@ -429,6 +429,35 @@ Use `behavior: domain` for Domain files, `behavior: ipcidr` for IP files and `be
     <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cn_Domain.yaml">Domain Only</a></td>
   </tr>
 </table>
+
+### Complete native Surge rule sets
+
+Use these mirrors with `RULE-SET` to preserve every rule type in the listed upstream file. They are Surge-only; the Domain/IP links below remain available independently.
+
+| Source | Mirror |
+| --- | --- |
+| lan_classical | [Rule set](surge/Lan_Classical.list) |
+| steam_classical | [Rule set](surge/Steam_Classical.list) |
+| adobeactivation_classical | [Rule set](surge/adobe-activation_Classical.list) |
+| googlefcm_classical | [Rule set](surge/googlefcm_Classical.list) |
+| twitter_classical | [Rule set](surge/twitter_Classical.list) |
+| openai_classical | [Rule set](surge/openai_Classical.list) |
+| copilot_classical | [Rule set](surge/Copilot_Classical.list) |
+| github_classical | [Rule set](surge/github_Classical.list) |
+| onedrive_classical | [Rule set](surge/onedrive_Classical.list) |
+| microsoft_classical | [Rule set](surge/Microsoft_Classical.list) |
+| icloud_classical | [Rule set](surge/icloud_Classical.list) |
+| apple_classical | [Rule set](surge/apple_Classical.list) |
+| youtube_classical | [Rule set](surge/youtube_Classical.list) |
+| google_classical | [Rule set](surge/Google_Classical.list) |
+| twitch_classical | [Rule set](surge/twitch_Classical.list) |
+| niconico_classical | [Rule set](surge/niconico_Classical.list) |
+| netflix_classical | [Rule set](surge/netflix_Classical.list) |
+| disney_classical | [Rule set](surge/disney_Classical.list) |
+| bilibili_classical | [Rule set](surge/bilibili_Classical.list) |
+| spotify_classical | [Rule set](surge/spotify_Classical.list) |
+| dmm_classical | [Rule set](surge/dmm_Classical.list) |
+| telegram_classical | [Rule set](surge/Telegram_Classical.list) |
 
 ### For Surge Kernel - Choose your TYPE
 
