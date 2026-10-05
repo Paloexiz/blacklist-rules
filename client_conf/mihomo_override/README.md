@@ -2,8 +2,6 @@
 
 **Select your Language: English | [简体中文](README.zh-cn.md)**
 
-Version 6.22.
-
 You can leave a comment here if you found any problem or have any suggestion.
 
 ## Note

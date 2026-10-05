@@ -6,12 +6,14 @@
 
 **如果您需要使用 `bluesky.yaml` 文件，可以通过以下链接获取：**
 
-- 原始链接：[查看或下载](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/other/clash/bluesky/bluesky.yaml)
-- 镜像链接（同步可能延迟 24 小时）：[查看或下载](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.yaml)
+- 原始链接：[YAML](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/other/clash/bluesky/bluesky.yaml) · [MRS](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/other/clash/bluesky/bluesky.mrs)
+- 镜像链接（同步可能延迟 24 小时）：[YAML](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.yaml) · [MRS](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.mrs)
 
 ### 注意事项
 
 **为了正常调用 `bluesky.yaml` 文件，`behavior` 属性应为 `domain`。**
+
+Mihomo 可使用上面的 MRS 链接：设置 `format: mrs`、`behavior: domain`，并把示例中的 URL 和缓存路径换成 `.mrs`。
 
 ### 示例代码
 

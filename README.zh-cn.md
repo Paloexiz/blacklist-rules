@@ -108,17 +108,25 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
 
 ### 适用于 Clash 内核 - 选择您的类型
 
+域名规则提供 YAML 和 MRS 两种格式。Mihomo 可使用 MRS，设置 `format: mrs` 和 `behavior: domain`；程序名规则使用 YAML，设置 `behavior: classical`。
+
 <table>
   <tr align="center">
-    <td>
-      <b>类型</b>
-    </td>
-    <td>
-      <b>通过原始链接以查看或下载</b>
-    </td>
-    <td>
-      <b>通过镜像链接以查看或下载</b>
-    </td>
+    <th rowspan="2" scope="col">
+      类型
+    </th>
+    <th colspan="2" scope="colgroup">
+      原始链接
+    </th>
+    <th colspan="2" scope="colgroup">
+      镜像链接
+    </th>
+  </tr>
+  <tr align="center">
+    <th scope="col">YAML</th>
+    <th scope="col">MRS</th>
+    <th scope="col">YAML</th>
+    <th scope="col">MRS</th>
   </tr>
   <tr align="center">
     <td>
@@ -128,7 +136,13 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/clash/blacklistrules_domainonly.yaml">仅域名</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/clash/blacklistrules_domainonly.mrs">仅域名</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/clash/blacklistrules_domainonly.yaml">仅域名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/clash/blacklistrules_domainonly.mrs">仅域名</a>
     </td>
   </tr>
   <tr align="center">
@@ -141,9 +155,19 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml">仅游戏且仅域名</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs">排除游戏且仅域名</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs">仅游戏且仅域名</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml">排除游戏且仅域名</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml">仅游戏且仅域名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs">排除游戏且仅域名</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs">仅游戏且仅域名</a>
     </td>
   </tr>
   <tr align="center">
@@ -156,9 +180,15 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/clash/anonymityservice_processnameonly.yaml">仅程序名</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/clash/anonymityservice_domainonly.mrs">仅域名</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_domainonly.yaml">仅域名</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_processnameonly.yaml">仅程序名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_domainonly.mrs">仅域名</a>
     </td>
   </tr>
   <tr align="center">
@@ -171,9 +201,19 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/clash/blockedgames_domainonly.yaml">仅游戏且仅域名</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs">排除游戏且仅域名</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs">仅游戏且仅域名</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.yaml">排除游戏且仅域名</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.yaml">仅游戏且仅域名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs">排除游戏且仅域名</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs">仅游戏且仅域名</a>
     </td>
   </tr>
 </table>

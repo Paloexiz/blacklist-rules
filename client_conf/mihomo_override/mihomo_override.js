@@ -262,22 +262,22 @@ const ruleProviders = {
     "path": "./ruleset/paloexiz/third_party/metacubex/private/private_domain.mrs"
   },
   "blacklistrules-unlock_game": {
-    ...ruleProviderYaml,
+    ...ruleProviderMrs,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.yaml",
-    "path": "./ruleset/paloexiz/blockedgames_domainonly.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs",
+    "path": "./ruleset/paloexiz/blockedgames_domainonly.mrs"
   },
   "blacklistrules-unlock_nogame": {
-    ...ruleProviderYaml,
+    ...ruleProviderMrs,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.yaml",
-    "path": "./ruleset/paloexiz/blockeddomains_nogame_domainonly.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs",
+    "path": "./ruleset/paloexiz/blockeddomains_nogame_domainonly.mrs"
   },
   "blacklistrules-security_domain": {
-    ...ruleProviderYaml,
+    ...ruleProviderMrs,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_domainonly.yaml",
-    "path": "./ruleset/paloexiz/anonymityservice_domainonly.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_domainonly.mrs",
+    "path": "./ruleset/paloexiz/anonymityservice_domainonly.mrs"
   },
   "blacklistrules-security_process": {
     ...ruleProviderYaml,
@@ -286,16 +286,16 @@ const ruleProviders = {
     "path": "./ruleset/paloexiz/anonymityservice_processnameonly.yaml"
   },
   "blacklistrules-boost_game": {
-    ...ruleProviderYaml,
+    ...ruleProviderMrs,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml",
-    "path": "./ruleset/paloexiz/slowdomains_gameonly_domainonly.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs",
+    "path": "./ruleset/paloexiz/slowdomains_gameonly_domainonly.mrs"
   },
   "blacklistrules-boost_nogame": {
-    ...ruleProviderYaml,
+    ...ruleProviderMrs,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml",
-    "path": "./ruleset/paloexiz/slowdomains_nogame_domainonly.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs",
+    "path": "./ruleset/paloexiz/slowdomains_nogame_domainonly.mrs"
   },
   "steam": {
     ...ruleProviderMrs,
@@ -340,10 +340,10 @@ const ruleProviders = {
     "path": "./ruleset/paloexiz/third_party/metacubex/z-library/z-library_domain.mrs"
   },
   "bluesky": {
-    ...ruleProviderYaml,
+    ...ruleProviderMrs,
     "behavior": "domain",
-    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.yaml",
-    "path": "./ruleset/paloexiz/bluesky.yaml"
+    "url": "https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.mrs",
+    "path": "./ruleset/paloexiz/bluesky.mrs"
   },
   "linuxdo": {
     ...ruleProviderMrs,

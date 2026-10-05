@@ -6,12 +6,14 @@
 
  **如果您需要使用 `slowdomains_nogame_domainonly.yaml` 文件，您可以通过如下超链接进行获取：**
 
-- 原始链接：[查看或下载](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml)
-- 镜像链接（可能会有24小时的延迟）：[查看或下载](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml)
+- 原始链接：[YAML](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml) · [MRS](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs)
+- 镜像链接（可能会有24小时的延迟）：[YAML](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml) · [MRS](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs)
 
 ### 注意事项
 
 **为了能够正常调用 `slowdomains_nogame_domainonly.yaml` 文件，`behavior` 属性应为 `domain` 字项。**
+
+Mihomo 可使用上面的 MRS 链接：设置 `format: mrs`、`behavior: domain`，并把示例中的 URL 和缓存路径换成 `.mrs`。
 
 ### 示例代码:
 
@@ -32,12 +34,14 @@ rule-providers:
 
  **如果您需要使用 `slowdomains_gameonly_domainonly.yaml` 文件，您可以通过如下超链接进行获取：**
 
-- 原始链接：[查看或下载](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml)
-- 镜像链接（可能会有24小时的延迟）：[查看或下载](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml)
+- 原始链接：[YAML](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml) · [MRS](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs)
+- 镜像链接（可能会有24小时的延迟）：[YAML](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml) · [MRS](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs)
 
 ### 注意事项
 
 **为了能够正常调用 `slowdomains_gameonly_domainonly.yaml` 文件，`behavior` 属性应为 `domain` 字项。**
+
+Mihomo 可使用上面的 MRS 链接：设置 `format: mrs`、`behavior: domain`，并把示例中的 URL 和缓存路径换成 `.mrs`。
 
 ### 示例代码
 

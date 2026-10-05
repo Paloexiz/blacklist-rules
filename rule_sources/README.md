@@ -27,11 +27,15 @@ doodles.google # Currently blocked.
 - A trailing `# note` is a maintenance note. It is only emitted to Clash outputs; Surge outputs only include the rule body.
 - `+.` is kept as-is in Clash outputs and converted to `.domain` in Surge outputs.
 - sing-box outputs native JSON with exact-domain, suffix and single-label wildcard semantics; `PROCESS-NAME,...` becomes `process_name`. Disabled entries and comments are omitted.
+- Clash outputs with `"mrs": "domain"` or `"mrs": "ipcidr"` in `rules.build.json` also generate a same-name `.mrs` file beside the YAML. Process rules remain YAML; MRS omits comments and disabled entries.
 - Do not edit generated outputs directly. Edit the source files here instead.
 
 ## Local Verification
 
+The build uses Mihomo v1.19.32. Add its executable to `PATH`, or set `MIHOMO_BIN` before running these commands:
+
 ```powershell
+$env:MIHOMO_BIN = "C:\path\to\mihomo.exe"
 python workflow_scripts/build_rules.py --self-test
 python workflow_scripts/build_rules.py
 python workflow_scripts/build_rules.py --check

@@ -27,11 +27,15 @@ doodles.google # Currently blocked.
 - 行尾 `# note` 是维护备注，只会输出到 Clash；Surge 只输出规则本体。
 - `+.` 在 Clash 中原样保留，在 Surge 中会转换为 `.domain`。
 - sing-box 输出原生 JSON，保留精确域名、后缀和单标签通配符语义；`PROCESS-NAME,...` 转换为 `process_name`。禁用条目及注释不输出。
+- 在 `rules.build.json` 的 Clash 输出中设置 `"mrs": "domain"` 或 `"mrs": "ipcidr"`，会在 YAML 旁生成同名 `.mrs` 文件。进程规则保留 YAML；MRS 不包含注释和禁用条目。
 - 不要直接手改生成产物；需要改规则就改这里的源文件。
 
 ## 本地校验
 
+构建使用 Mihomo v1.19.32。请将可执行文件加入 `PATH`，或先设置 `MIHOMO_BIN`：
+
 ```powershell
+$env:MIHOMO_BIN = "C:\path\to\mihomo.exe"
 python workflow_scripts/build_rules.py --self-test
 python workflow_scripts/build_rules.py
 python workflow_scripts/build_rules.py --check

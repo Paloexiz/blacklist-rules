@@ -4,6 +4,7 @@
     {
       "path": "artifact/common/clash/blacklistrules_domainonly.yaml",
       "format": "clash",
+      "mrs": "domain",
       "merge": "sort_categories_groups",
       "sources": [
         "rule_sources/unlock-game.rules",
@@ -40,6 +41,7 @@
     {
       "path": "artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml",
       "format": "clash",
+      "mrs": "domain",
       "omit_categories": true,
       "sources": ["rule_sources/boost-game.rules"]
     },
@@ -58,6 +60,7 @@
     {
       "path": "artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml",
       "format": "clash",
+      "mrs": "domain",
       "sources": ["rule_sources/boost-nogame.rules"]
     },
     {
@@ -73,6 +76,7 @@
     {
       "path": "artifact/individual/security/clash/anonymityservice_domainonly.yaml",
       "format": "clash",
+      "mrs": "domain",
       "sources": ["rule_sources/security-domain.rules"]
     },
     {
@@ -103,6 +107,7 @@
     {
       "path": "artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.yaml",
       "format": "clash",
+      "mrs": "domain",
       "sources": ["rule_sources/unlock-nogame.rules"]
     },
     {
@@ -118,6 +123,7 @@
     {
       "path": "artifact/individual/unlock/clash/blockedgames_domainonly.yaml",
       "format": "clash",
+      "mrs": "domain",
       "omit_categories": true,
       "sources": ["rule_sources/unlock-game.rules"]
     },
@@ -136,6 +142,7 @@
     {
       "path": "artifact/other/clash/bluesky/bluesky.yaml",
       "format": "clash",
+      "mrs": "domain",
       "sources": ["rule_sources/other-bluesky.rules"]
     },
     {

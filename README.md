@@ -108,17 +108,25 @@ Third-party providers are synchronized daily in Clash, Surge and sing-box format
 
 ### For Clash Kernel - Choose your TYPE
 
+Domain rules are available as YAML and MRS. For Mihomo, use MRS with `format: mrs` and `behavior: domain`. Process rules use YAML with `behavior: classical`.
+
 <table>
   <tr align="center">
-    <td>
-      <b>TYPE</b>
-    </td>
-    <td>
-      <b>View or Download by an Oringal Link</b>
-    </td>
-    <td>
-      <b>View or Download by a CDN Link</b>
-    </td>
+    <th rowspan="2" scope="col">
+      TYPE
+    </th>
+    <th colspan="2" scope="colgroup">
+      Original links
+    </th>
+    <th colspan="2" scope="colgroup">
+      CDN links
+    </th>
+  </tr>
+  <tr align="center">
+    <th scope="col">YAML</th>
+    <th scope="col">MRS</th>
+    <th scope="col">YAML</th>
+    <th scope="col">MRS</th>
   </tr>
   <tr align="center">
     <td>
@@ -128,7 +136,13 @@ Third-party providers are synchronized daily in Clash, Surge and sing-box format
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/clash/blacklistrules_domainonly.yaml">Domain Only</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/clash/blacklistrules_domainonly.mrs">Domain Only</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/clash/blacklistrules_domainonly.yaml">Domain Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/clash/blacklistrules_domainonly.mrs">Domain Only</a>
     </td>
   </tr>
   <tr align="center">
@@ -141,9 +155,19 @@ Third-party providers are synchronized daily in Clash, Surge and sing-box format
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml">Game Only & Domain Only</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs">No game & Domain Only</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs">Game Only & Domain Only</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.yaml">No game & Domain Only</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.yaml">Game Only & Domain Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_nogame_domainonly.mrs">No game & Domain Only</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/clash/slowdomains_gameonly_domainonly.mrs">Game Only & Domain Only</a>
     </td>
   </tr>
   <tr align="center">
@@ -156,9 +180,15 @@ Third-party providers are synchronized daily in Clash, Surge and sing-box format
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/clash/anonymityservice_processnameonly.yaml">Process Name Only</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/clash/anonymityservice_domainonly.mrs">Domain Only</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_domainonly.yaml">Domain Only</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_processnameonly.yaml">Process Name Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/clash/anonymityservice_domainonly.mrs">Domain Only</a>
     </td>
   </tr>
   <tr align="center">
@@ -171,9 +201,19 @@ Third-party providers are synchronized daily in Clash, Surge and sing-box format
       <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/clash/blockedgames_domainonly.yaml">Game Only & Domain Only</a>
     </td>
     <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs">No game & Domain Only</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs">Game Only & Domain Only</a>
+    </td>
+    <td>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.yaml">No game & Domain Only</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.yaml">Game Only & Domain Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs">No game & Domain Only</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs">Game Only & Domain Only</a>
     </td>
   </tr>
 </table>

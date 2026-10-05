@@ -6,12 +6,14 @@
 
 **If you would like to use `bluesky.yaml`, you can get it with the following links:**
 
-- Original: [View or Download](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/other/clash/bluesky/bluesky.yaml)
-- CDN (may have a 24-hour sync delay): [View or Download](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.yaml)
+- Original: [YAML](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/other/clash/bluesky/bluesky.yaml) · [MRS](https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/other/clash/bluesky/bluesky.mrs)
+- CDN (may have a 24-hour sync delay): [YAML](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.yaml) · [MRS](https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/other/clash/bluesky/bluesky.mrs)
 
 ### Note
 
 **To use `bluesky.yaml`, the `behavior` property should be `domain`.**
+
+For Mihomo, use the MRS link with `format: mrs` and `behavior: domain`; change the example's URL and cache path to the `.mrs` file.
 
 ### Example
 
