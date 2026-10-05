@@ -34,78 +34,6 @@ Third-party providers are synchronized daily in Clash, Surge and sing-box format
 
 **Note**: CDN links can lag because of caching. Use the original links if you need the latest files.
 
-### For sing-box Kernel - Choose your TYPE
-
-<table>
-  <tr align="center">
-    <td>
-      <b>TYPE</b>
-    </td>
-    <td>
-      <b>View or Download by an Oringal Link</b>
-    </td>
-    <td>
-      <b>View or Download by a CDN Link</b>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/common/sing-box">CustomRules Collection</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/sing-box/blacklistrules_domainonly.json">Domain Only</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/sing-box/blacklistrules_domainonly.json">Domain Only</a>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/individual/boost/sing-box">Common-Boost</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">No game & Domain Only</a>
-      <br>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">Game Only & Domain Only</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">No game & Domain Only</a>
-      <br>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">Game Only & Domain Only</a>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/individual/security/sing-box">Common-Security</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">Domain Only</a>
-      <br>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">Process Name Only</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">Domain Only</a>
-      <br>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">Process Name Only</a>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/individual/unlock/sing-box">Common-Unlock</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">No game & Domain Only</a>
-      <br>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">Game Only & Domain Only</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">No game & Domain Only</a>
-      <br>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">Game Only & Domain Only</a>
-    </td>
-  </tr>
-</table>
-
 ### For Clash Kernel - Choose your TYPE
 
 Domain rules are available as YAML and MRS. For Mihomo, use MRS with `format: mrs` and `behavior: domain`. Process rules use YAML with `behavior: classical`.
@@ -214,6 +142,78 @@ Domain rules are available as YAML and MRS. For Mihomo, use MRS with `format: mr
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs">No game & Domain Only</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs">Game Only & Domain Only</a>
+    </td>
+  </tr>
+</table>
+
+### For sing-box Kernel - Choose your TYPE
+
+<table>
+  <tr align="center">
+    <td>
+      <b>TYPE</b>
+    </td>
+    <td>
+      <b>View or Download by an Oringal Link</b>
+    </td>
+    <td>
+      <b>View or Download by a CDN Link</b>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/common/sing-box">CustomRules Collection</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/sing-box/blacklistrules_domainonly.json">Domain Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/sing-box/blacklistrules_domainonly.json">Domain Only</a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/individual/boost/sing-box">Common-Boost</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">No game & Domain Only</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">Game Only & Domain Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">No game & Domain Only</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">Game Only & Domain Only</a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/individual/security/sing-box">Common-Security</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">Domain Only</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">Process Name Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">Domain Only</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">Process Name Only</a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/tree/main/artifact/individual/unlock/sing-box">Common-Unlock</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">No game & Domain Only</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">Game Only & Domain Only</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">No game & Domain Only</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">Game Only & Domain Only</a>
     </td>
   </tr>
 </table>

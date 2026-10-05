@@ -34,78 +34,6 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
 
 **提示**：CDN 镜像链接可能因为缓存而滞后。需要最新文件时，请优先使用原始链接。
 
-### 适用于 sing-box 内核 - 选择您的类型
-
-<table>
-  <tr align="center">
-    <td>
-      <b>类型</b>
-    </td>
-    <td>
-      <b>通过原始链接以查看或下载</b>
-    </td>
-    <td>
-      <b>通过镜像链接以查看或下载</b>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/common/sing-box/README.zh-cn.md">自定义规则合集</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/sing-box/blacklistrules_domainonly.json">仅域名</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/sing-box/blacklistrules_domainonly.json">仅域名</a>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/individual/boost/sing-box/README.zh-cn.md">通用-加速</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">排除游戏且仅域名</a>
-      <br>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">仅游戏且仅域名</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">排除游戏且仅域名</a>
-      <br>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">仅游戏且仅域名</a>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/individual/security/sing-box/README.zh-cn.md">通用-安全</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">仅域名</a>
-      <br>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">仅程序名</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">仅域名</a>
-      <br>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">仅程序名</a>
-    </td>
-  </tr>
-  <tr align="center">
-    <td>
-      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/individual/unlock/sing-box/README.zh-cn.md">通用-解锁</a>
-    </td>
-    <td>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">排除游戏且仅域名</a>
-      <br>
-      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">仅游戏且仅域名</a>
-    </td>
-    <td>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">排除游戏且仅域名</a>
-      <br>
-      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">仅游戏且仅域名</a>
-    </td>
-  </tr>
-</table>
-
 ### 适用于 Clash 内核 - 选择您的类型
 
 域名规则提供 YAML 和 MRS 两种格式。Mihomo 可使用 MRS，设置 `format: mrs` 和 `behavior: domain`；程序名规则使用 YAML，设置 `behavior: classical`。
@@ -214,6 +142,78 @@ Pull Request 中，GitHub Actions 会检查生成产物是否和源文件一致�
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockeddomains_nogame_domainonly.mrs">排除游戏且仅域名</a>
       <br>
       <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/clash/blockedgames_domainonly.mrs">仅游戏且仅域名</a>
+    </td>
+  </tr>
+</table>
+
+### 适用于 sing-box 内核 - 选择您的类型
+
+<table>
+  <tr align="center">
+    <td>
+      <b>类型</b>
+    </td>
+    <td>
+      <b>通过原始链接以查看或下载</b>
+    </td>
+    <td>
+      <b>通过镜像链接以查看或下载</b>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/common/sing-box/README.zh-cn.md">自定义规则合集</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/common/sing-box/blacklistrules_domainonly.json">仅域名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/common/sing-box/blacklistrules_domainonly.json">仅域名</a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/individual/boost/sing-box/README.zh-cn.md">通用-加速</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">排除游戏且仅域名</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">仅游戏且仅域名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_nogame_domainonly.json">排除游戏且仅域名</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/boost/sing-box/slowdomains_gameonly_domainonly.json">仅游戏且仅域名</a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/individual/security/sing-box/README.zh-cn.md">通用-安全</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">仅域名</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">仅程序名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_domainonly.json">仅域名</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/security/sing-box/anonymityservice_processnameonly.json">仅程序名</a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/Paloexiz/blacklist-rules/blob/main/artifact/individual/unlock/sing-box/README.zh-cn.md">通用-解锁</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">排除游戏且仅域名</a>
+      <br>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">仅游戏且仅域名</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockeddomains_nogame_domainonly.json">排除游戏且仅域名</a>
+      <br>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/artifact/individual/unlock/sing-box/blockedgames_domainonly.json">仅游戏且仅域名</a>
     </td>
   </tr>
 </table>
