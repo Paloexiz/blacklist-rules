@@ -234,7 +234,7 @@
 
 Domain 文件使用 `behavior: domain`，IP 文件使用 `behavior: ipcidr`，applications 使用 `behavior: classical`。MRS 使用 `format: mrs`，YAML 使用 `format: yaml`；MRS 适用于 Mihomo 的域名和 IP 规则，进程规则使用 YAML。
 
-MRS、YAML 分别放在 `clash/mrs/作者/服务/`、`clash/yaml/作者/服务/` 下，例如 `clash/mrs/peiyingyao/steam/steam_domain.mrs`。
+MRS、YAML 均放在 `clash/作者/服务/` 下，例如 `clash/peiyingyao/steam/steam_domain.mrs`。
 
 <table>
   <tr align="center">
@@ -244,193 +244,193 @@ MRS、YAML 分别放在 `clash/mrs/作者/服务/`、`clash/yaml/作者/服务/`
   </tr>
   <tr align="center">
     <td>adrules</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/cats-team/adrules/adrules_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/cats-team/adrules/adrules_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/cats-team/adrules/adrules_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/cats-team/adrules/adrules_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/cats-team/adrules/adrules_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/cats-team/adrules/adrules_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cats-team/adrules/adrules_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/cats-team/adrules/adrules_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>private</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/private/private_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/private/private_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/private/private_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/private/private_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/private/private_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/private/private_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/private/private_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/private/private_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/private/private_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/private/private_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/private/private_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/private/private_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/private/private_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/private/private_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/private/private_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/private/private_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>Steam</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/steam/steam_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/steam/steam_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/steam/steam_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/steam/steam_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/steam/steam_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/steam/steam_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/steam/steam_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/steam/steam_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>Copilot</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/copilot/copilot_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/copilot/copilot_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/copilot/copilot_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/copilot/copilot_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/copilot/copilot_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/copilot/copilot_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/copilot/copilot_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/copilot/copilot_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/copilot/copilot_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/copilot/copilot_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/copilot/copilot_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/copilot/copilot_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/copilot/copilot_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/copilot/copilot_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/copilot/copilot_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/copilot/copilot_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>google-gemini</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/google-gemini/google-gemini_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/google-gemini/google-gemini_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/google-gemini/google-gemini_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/google-gemini/google-gemini_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/google-gemini/google-gemini_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/google-gemini/google-gemini_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/google-gemini/google-gemini_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/google-gemini/google-gemini_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>adobe-activation</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/adobe-activation/adobe-activation_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/adobe-activation/adobe-activation_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/adobe-activation/adobe-activation_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/adobe-activation/adobe-activation_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/adobe-activation/adobe-activation_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/adobe-activation/adobe-activation_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/adobe-activation/adobe-activation_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/adobe-activation/adobe-activation_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>googlefcm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/googlefcm/googlefcm_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/googlefcm/googlefcm_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/googlefcm/googlefcm_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/googlefcm/googlefcm_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/googlefcm/googlefcm_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/googlefcm/googlefcm_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/googlefcm/googlefcm_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/googlefcm/googlefcm_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>z-library</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/z-library/z-library_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/z-library/z-library_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/z-library/z-library_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/z-library/z-library_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/z-library/z-library_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/z-library/z-library_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/z-library/z-library_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/z-library/z-library_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>linuxdo</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/linuxdo/linuxdo_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/linuxdo/linuxdo_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/linuxdo/linuxdo_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/linuxdo/linuxdo_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/linuxdo/linuxdo_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/linuxdo/linuxdo_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/linuxdo/linuxdo_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/linuxdo/linuxdo_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>twitter</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/twitter/twitter_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/twitter/twitter_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/twitter/twitter_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/twitter/twitter_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/twitter/twitter_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/twitter/twitter_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/twitter/twitter_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/twitter/twitter_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/twitter/twitter_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/twitter/twitter_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/twitter/twitter_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/twitter/twitter_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/twitter/twitter_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/twitter/twitter_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/twitter/twitter_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/twitter/twitter_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>github</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/github/github_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/github/github_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/github/github_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/github/github_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/github/github_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/github/github_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/github/github_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/github/github_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>gitlab</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/gitlab/gitlab_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/gitlab/gitlab_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/gitlab/gitlab_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/gitlab/gitlab_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/gitlab/gitlab_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/gitlab/gitlab_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/gitlab/gitlab_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/gitlab/gitlab_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>onedrive</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/onedrive/onedrive_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/onedrive/onedrive_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/onedrive/onedrive_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/onedrive/onedrive_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/onedrive/onedrive_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/onedrive/onedrive_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/onedrive/onedrive_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/onedrive/onedrive_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>Microsoft</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/microsoft/microsoft_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/microsoft/microsoft_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/microsoft/microsoft_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/microsoft/microsoft_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/microsoft/microsoft_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/microsoft/microsoft_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/microsoft/microsoft_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/microsoft/microsoft_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>openai</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/openai/openai_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/openai/openai_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/openai/openai_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/openai/openai_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/openai/openai_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/openai/openai_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/openai/openai_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/openai/openai_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>anthropic</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/anthropic/anthropic_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/anthropic/anthropic_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/anthropic/anthropic_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/anthropic/anthropic_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/anthropic/anthropic_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/anthropic/anthropic_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/anthropic/anthropic_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/anthropic/anthropic_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>discord</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/discord/discord_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/discord/discord_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/discord/discord_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/discord/discord_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/discord/discord_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/discord/discord_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/discord/discord_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/discord/discord_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>aliyun</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/aliyun/aliyun_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/aliyun/aliyun_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/aliyun/aliyun_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/aliyun/aliyun_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/aliyun/aliyun_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/aliyun/aliyun_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/aliyun/aliyun_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/aliyun/aliyun_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>cloudflare</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/cloudflare/cloudflare_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/cloudflare/cloudflare_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/cloudflare/cloudflare_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/cloudflare/cloudflare_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/cloudflare/cloudflare_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/cloudflare/cloudflare_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/cloudflare/cloudflare_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/cloudflare/cloudflare_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>docker</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/docker/docker_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/docker/docker_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/docker/docker_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/docker/docker_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/docker/docker_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/docker/docker_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/docker/docker_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/docker/docker_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>homebrew</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/homebrew/homebrew_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/homebrew/homebrew_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/homebrew/homebrew_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/homebrew/homebrew_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/homebrew/homebrew_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/homebrew/homebrew_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/homebrew/homebrew_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/homebrew/homebrew_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>python</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/python/python_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/python/python_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/python/python_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/python/python_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/python/python_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/python/python_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/python/python_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/python/python_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>icloud</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/icloud/icloud_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/icloud/icloud_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/icloud/icloud_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/icloud/icloud_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/icloud/icloud_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/icloud/icloud_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/icloud/icloud_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/icloud/icloud_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>apple</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/apple/apple_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/apple/apple_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/apple/apple_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/apple/apple_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/apple/apple_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/apple/apple_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/apple/apple_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/apple/apple_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>youtube</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/youtube/youtube_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/youtube/youtube_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/youtube/youtube_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/youtube/youtube_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/youtube/youtube_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/youtube/youtube_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/youtube/youtube_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/youtube/youtube_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>Google</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/google/google_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/google/google_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/google/google_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/google/google_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/google/google_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/google/google_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/google/google_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/google/google_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/google/google_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/google/google_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/google/google_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/google/google_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/google/google_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/google/google_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/google/google_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/google/google_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>twitch</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/twitch/twitch_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/twitch/twitch_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/twitch/twitch_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/twitch/twitch_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/twitch/twitch_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/twitch/twitch_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/twitch/twitch_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/twitch/twitch_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>niconico</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/niconico/niconico_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/niconico/niconico_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/niconico/niconico_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/niconico/niconico_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/niconico/niconico_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/niconico/niconico_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/niconico/niconico_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/niconico/niconico_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>Pixiv</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/pixiv/pixiv_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/pixiv/pixiv_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/pixiv/pixiv_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/pixiv/pixiv_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/pixiv/pixiv_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/pixiv/pixiv_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/pixiv/pixiv_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/pixiv/pixiv_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>netflix</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/netflix/netflix_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/netflix/netflix_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/netflix/netflix_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/netflix/netflix_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/netflix/netflix_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/netflix/netflix_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/netflix/netflix_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/netflix/netflix_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/netflix/netflix_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/netflix/netflix_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/netflix/netflix_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/netflix/netflix_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/netflix/netflix_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/netflix/netflix_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/netflix/netflix_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/netflix/netflix_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>disney</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/disney/disney_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/disney/disney_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/disney/disney_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/disney/disney_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/disney/disney_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/disney/disney_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/disney/disney_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/disney/disney_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>bilibili</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/bilibili/bilibili_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/bilibili/bilibili_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/bilibili/bilibili_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/bilibili/bilibili_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/bilibili/bilibili_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/bilibili/bilibili_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/bilibili/bilibili_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/bilibili/bilibili_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>spotify</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/spotify/spotify_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/spotify/spotify_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/spotify/spotify_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/spotify/spotify_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/spotify/spotify_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/spotify/spotify_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/spotify/spotify_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/spotify/spotify_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>dmm</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/dmm/dmm_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/dmm/dmm_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/dmm/dmm_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/dmm/dmm_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/dmm/dmm_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/dmm/dmm_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/dmm/dmm_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/dmm/dmm_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>Telegram</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/telegram/telegram_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/telegram/telegram_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/peiyingyao/telegram/telegram_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/peiyingyao/telegram/telegram_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/telegram/telegram_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/telegram/telegram_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/peiyingyao/telegram/telegram_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/peiyingyao/telegram/telegram_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/telegram/telegram_ip.mrs">MRS · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/telegram/telegram_ip.yaml">YAML · 仅 IP</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/telegram/telegram_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/peiyingyao/telegram/telegram_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/telegram/telegram_ip.mrs">MRS · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/telegram/telegram_ip.yaml">YAML · 仅 IP</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/telegram/telegram_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/peiyingyao/telegram/telegram_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>gfw</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/gfw/gfw_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/gfw/gfw_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/gfw/gfw_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/gfw/gfw_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/gfw/gfw_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/gfw/gfw_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/gfw/gfw_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/gfw/gfw_domain.yaml">YAML · 仅域名</a></td>
   </tr>
   <tr align="center">
     <td>applications</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/loyalsoldier/applications/applications_process.yaml">YAML · 仅进程</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/loyalsoldier/applications/applications_process.yaml">YAML · 仅进程</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/loyalsoldier/applications/applications_process.yaml">YAML · 仅进程</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/loyalsoldier/applications/applications_process.yaml">YAML · 仅进程</a></td>
   </tr>
   <tr align="center">
     <td>cn</td>
-    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/mrs/metacubex/cn/cn_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/yaml/metacubex/cn/cn_domain.yaml">YAML · 仅域名</a></td>
-    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/mrs/metacubex/cn/cn_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/yaml/metacubex/cn/cn_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/cn/cn_domain.mrs">MRS · 仅域名</a><br><a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/third_party/clash/metacubex/cn/cn_domain.yaml">YAML · 仅域名</a></td>
+    <td><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/cn/cn_domain.mrs">MRS · 仅域名</a><br><a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/third_party/clash/metacubex/cn/cn_domain.yaml">YAML · 仅域名</a></td>
   </tr>
 </table>
 

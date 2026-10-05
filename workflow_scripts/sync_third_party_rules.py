@@ -433,9 +433,9 @@ def possible_output_paths(name: str, kind: str, url: str) -> dict[str, str]:
         # Apple_Domain.list and Apple.list are distinct inputs for the same service.
         return {group: f"surge/{folder}/{service}_{'domainset' if name == 'Blackmatrix7_AppleDomain' else group.lower()}.list" for group in types}
     if kind in {"MrsDomain", "MrsIP"}:
-        return {"mrs": f"clash/mrs/{folder}/{service}_{kind.removeprefix('Mrs').lower()}.mrs"}
+        return {"mrs": f"clash/{folder}/{service}_{kind.removeprefix('Mrs').lower()}.mrs"}
     filename = f"{service}_{kind.lower()}"
-    paths = {fmt: f"{'clash/yaml' if fmt == 'clash' else fmt}/{folder}/{filename}{extension}" for fmt, extension in FORMATS.items()}
+    paths = {fmt: f"{fmt}/{folder}/{filename}{extension}" for fmt, extension in FORMATS.items()}
     if any(other_kind in {"SurgeSplit", "DomainSet"} and other_url.split("/")[3:5] == url.split("/")[3:5] and source_layout(other_name, other_kind, other_url) == (author, service) for other_name, other_url, other_kind in UPSTREAM_RULES.values()):
         paths.pop("surge")
     return paths
@@ -942,8 +942,8 @@ def self_test() -> None:
         license_file.parent.mkdir(parents=True)
         license_file.write_bytes(b"Fixed license copy\n")
         sync(root, samples.__getitem__)
-        assert (root / "third_party/clash/mrs/cats-team/adrules/adrules_domain.mrs").read_bytes() == mrs_domain
-        assert (root / "third_party/clash/yaml/cats-team/adrules/adrules_domain.yaml").is_file()
+        assert (root / "third_party/clash/cats-team/adrules/adrules_domain.mrs").read_bytes() == mrs_domain
+        assert (root / "third_party/clash/cats-team/adrules/adrules_domain.yaml").is_file()
         assert (root / "third_party/surge/cats-team/adrules/adrules_domain.list").read_bytes().endswith(b"exact.test\n.example.com\n")
         assert license_file.read_bytes() == b"Fixed license copy\n"
         assert {path for path in (root / "third_party/licenses").rglob("*") if path.is_file()} == {license_file}
@@ -962,7 +962,7 @@ def self_test() -> None:
 
         with patch(__name__ + ".validate_mrs", return_value=False):
             sync(root, samples.__getitem__)
-        assert not list((root / "third_party/clash/mrs").rglob("*.mrs"))
+        assert not list((root / "third_party/clash").rglob("*.mrs"))
         assert all(json.loads((root / "third_party/sources.json").read_text(encoding="utf-8"))[index]["outputs"] == {} for index in selected if index.startswith("mrs_"))
         empty_native = {path: path.read_bytes() for path in root.rglob("*") if path.is_file()}
         sync(root, lambda url: None)
@@ -988,7 +988,7 @@ def self_test() -> None:
         sync(root, lambda url: None if url == missing_url else changed_sample(url, "updated.test"))
         assert not mirrored.exists()
         assert json.loads((root / "third_party/sources.json").read_text(encoding="utf-8"))["surge_ruleforocd_steam"] == old_source
-        assert b"updated.test" in (root / "third_party/clash/yaml/cats-team/adrules/adrules_domain.yaml").read_bytes()
+        assert b"updated.test" in (root / "third_party/clash/cats-team/adrules/adrules_domain.yaml").read_bytes()
         before = {path: path.read_bytes() for path in root.rglob("*") if path.is_file()}
         sync(root, lambda url: None)
         assert before == {path: path.read_bytes() for path in root.rglob("*") if path.is_file()}

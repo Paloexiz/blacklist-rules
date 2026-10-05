@@ -5,7 +5,7 @@
     "kind": "Domain",
     "notices": "NOTICE.md",
     "outputs": {
-      "clash": "clash/yaml/cats-team/adrules/adrules_domain.yaml",
+      "clash": "clash/cats-team/adrules/adrules_domain.yaml",
       "sing-box": "sing-box/cats-team/adrules/adrules_domain.json"
     }
   },
@@ -15,7 +15,7 @@
     "kind": "IP",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/private/private_ip.yaml",
+      "clash": "clash/metacubex/private/private_ip.yaml",
       "surge": "surge/metacubex/private/private_ip.list",
       "sing-box": "sing-box/metacubex/private/private_ip.json"
     }
@@ -26,7 +26,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/private/private_domain.yaml",
+      "clash": "clash/metacubex/private/private_domain.yaml",
       "surge": "surge/metacubex/private/private_domain.list",
       "sing-box": "sing-box/metacubex/private/private_domain.json"
     }
@@ -37,7 +37,7 @@
     "kind": "Domain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/steam/steam_domain.yaml",
+      "clash": "clash/peiyingyao/steam/steam_domain.yaml",
       "sing-box": "sing-box/peiyingyao/steam/steam_domain.json"
     }
   },
@@ -47,7 +47,7 @@
     "kind": "IP",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/copilot/copilot_ip.yaml",
+      "clash": "clash/peiyingyao/copilot/copilot_ip.yaml",
       "surge": "surge/peiyingyao/copilot/copilot_ip.list",
       "sing-box": "sing-box/peiyingyao/copilot/copilot_ip.json"
     }
@@ -58,7 +58,7 @@
     "kind": "Domain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/copilot/copilot_domain.yaml",
+      "clash": "clash/peiyingyao/copilot/copilot_domain.yaml",
       "surge": "surge/peiyingyao/copilot/copilot_domain.list",
       "sing-box": "sing-box/peiyingyao/copilot/copilot_domain.json"
     }
@@ -69,7 +69,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/google-gemini/google-gemini_domain.yaml",
+      "clash": "clash/metacubex/google-gemini/google-gemini_domain.yaml",
       "sing-box": "sing-box/metacubex/google-gemini/google-gemini_domain.json"
     }
   },
@@ -79,7 +79,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/adobe-activation/adobe-activation_domain.yaml",
+      "clash": "clash/metacubex/adobe-activation/adobe-activation_domain.yaml",
       "surge": "surge/metacubex/adobe-activation/adobe-activation_domain.list",
       "sing-box": "sing-box/metacubex/adobe-activation/adobe-activation_domain.json"
     }
@@ -90,7 +90,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/googlefcm/googlefcm_domain.yaml",
+      "clash": "clash/metacubex/googlefcm/googlefcm_domain.yaml",
       "surge": "surge/metacubex/googlefcm/googlefcm_domain.list",
       "sing-box": "sing-box/metacubex/googlefcm/googlefcm_domain.json"
     }
@@ -101,7 +101,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/z-library/z-library_domain.yaml",
+      "clash": "clash/metacubex/z-library/z-library_domain.yaml",
       "surge": "surge/metacubex/z-library/z-library_domain.list",
       "sing-box": "sing-box/metacubex/z-library/z-library_domain.json"
     }
@@ -112,7 +112,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/linuxdo/linuxdo_domain.yaml",
+      "clash": "clash/metacubex/linuxdo/linuxdo_domain.yaml",
       "sing-box": "sing-box/metacubex/linuxdo/linuxdo_domain.json"
     }
   },
@@ -122,7 +122,7 @@
     "kind": "IP",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/twitter/twitter_ip.yaml",
+      "clash": "clash/metacubex/twitter/twitter_ip.yaml",
       "surge": "surge/metacubex/twitter/twitter_ip.list",
       "sing-box": "sing-box/metacubex/twitter/twitter_ip.json"
     }
@@ -133,7 +133,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/twitter/twitter_domain.yaml",
+      "clash": "clash/metacubex/twitter/twitter_domain.yaml",
       "surge": "surge/metacubex/twitter/twitter_domain.list",
       "sing-box": "sing-box/metacubex/twitter/twitter_domain.json"
     }
@@ -144,7 +144,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/github/github_domain.yaml",
+      "clash": "clash/metacubex/github/github_domain.yaml",
       "surge": "surge/metacubex/github/github_domain.list",
       "sing-box": "sing-box/metacubex/github/github_domain.json"
     }
@@ -155,7 +155,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/gitlab/gitlab_domain.yaml",
+      "clash": "clash/metacubex/gitlab/gitlab_domain.yaml",
       "sing-box": "sing-box/metacubex/gitlab/gitlab_domain.json"
     }
   },
@@ -165,7 +165,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/onedrive/onedrive_domain.yaml",
+      "clash": "clash/metacubex/onedrive/onedrive_domain.yaml",
       "surge": "surge/metacubex/onedrive/onedrive_domain.list",
       "sing-box": "sing-box/metacubex/onedrive/onedrive_domain.json"
     }
@@ -176,7 +176,7 @@
     "kind": "Domain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/microsoft/microsoft_domain.yaml",
+      "clash": "clash/peiyingyao/microsoft/microsoft_domain.yaml",
       "surge": "surge/peiyingyao/microsoft/microsoft_domain.list",
       "sing-box": "sing-box/peiyingyao/microsoft/microsoft_domain.json"
     }
@@ -187,7 +187,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/openai/openai_domain.yaml",
+      "clash": "clash/metacubex/openai/openai_domain.yaml",
       "surge": "surge/metacubex/openai/openai_domain.list",
       "sing-box": "sing-box/metacubex/openai/openai_domain.json"
     }
@@ -198,7 +198,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/anthropic/anthropic_domain.yaml",
+      "clash": "clash/metacubex/anthropic/anthropic_domain.yaml",
       "surge": "surge/metacubex/anthropic/anthropic_domain.list",
       "sing-box": "sing-box/metacubex/anthropic/anthropic_domain.json"
     }
@@ -209,7 +209,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/discord/discord_domain.yaml",
+      "clash": "clash/metacubex/discord/discord_domain.yaml",
       "surge": "surge/metacubex/discord/discord_domain.list",
       "sing-box": "sing-box/metacubex/discord/discord_domain.json"
     }
@@ -220,7 +220,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/aliyun/aliyun_domain.yaml",
+      "clash": "clash/metacubex/aliyun/aliyun_domain.yaml",
       "sing-box": "sing-box/metacubex/aliyun/aliyun_domain.json"
     }
   },
@@ -230,7 +230,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/cloudflare/cloudflare_domain.yaml",
+      "clash": "clash/metacubex/cloudflare/cloudflare_domain.yaml",
       "sing-box": "sing-box/metacubex/cloudflare/cloudflare_domain.json"
     }
   },
@@ -240,7 +240,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/docker/docker_domain.yaml",
+      "clash": "clash/metacubex/docker/docker_domain.yaml",
       "surge": "surge/metacubex/docker/docker_domain.list",
       "sing-box": "sing-box/metacubex/docker/docker_domain.json"
     }
@@ -251,7 +251,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/homebrew/homebrew_domain.yaml",
+      "clash": "clash/metacubex/homebrew/homebrew_domain.yaml",
       "sing-box": "sing-box/metacubex/homebrew/homebrew_domain.json"
     }
   },
@@ -261,7 +261,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/python/python_domain.yaml",
+      "clash": "clash/metacubex/python/python_domain.yaml",
       "sing-box": "sing-box/metacubex/python/python_domain.json"
     }
   },
@@ -271,7 +271,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/icloud/icloud_domain.yaml",
+      "clash": "clash/metacubex/icloud/icloud_domain.yaml",
       "surge": "surge/metacubex/icloud/icloud_domain.list",
       "sing-box": "sing-box/metacubex/icloud/icloud_domain.json"
     }
@@ -282,7 +282,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/apple/apple_domain.yaml",
+      "clash": "clash/metacubex/apple/apple_domain.yaml",
       "surge": "surge/metacubex/apple/apple_domain.list",
       "sing-box": "sing-box/metacubex/apple/apple_domain.json"
     }
@@ -293,7 +293,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/youtube/youtube_domain.yaml",
+      "clash": "clash/metacubex/youtube/youtube_domain.yaml",
       "surge": "surge/metacubex/youtube/youtube_domain.list",
       "sing-box": "sing-box/metacubex/youtube/youtube_domain.json"
     }
@@ -304,7 +304,7 @@
     "kind": "IP",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/google/google_ip.yaml",
+      "clash": "clash/peiyingyao/google/google_ip.yaml",
       "surge": "surge/peiyingyao/google/google_ip.list",
       "sing-box": "sing-box/peiyingyao/google/google_ip.json"
     }
@@ -315,7 +315,7 @@
     "kind": "Domain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/google/google_domain.yaml",
+      "clash": "clash/peiyingyao/google/google_domain.yaml",
       "surge": "surge/peiyingyao/google/google_domain.list",
       "sing-box": "sing-box/peiyingyao/google/google_domain.json"
     }
@@ -326,7 +326,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/twitch/twitch_domain.yaml",
+      "clash": "clash/metacubex/twitch/twitch_domain.yaml",
       "surge": "surge/metacubex/twitch/twitch_domain.list",
       "sing-box": "sing-box/metacubex/twitch/twitch_domain.json"
     }
@@ -337,7 +337,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/niconico/niconico_domain.yaml",
+      "clash": "clash/metacubex/niconico/niconico_domain.yaml",
       "surge": "surge/metacubex/niconico/niconico_domain.list",
       "sing-box": "sing-box/metacubex/niconico/niconico_domain.json"
     }
@@ -348,7 +348,7 @@
     "kind": "Domain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/pixiv/pixiv_domain.yaml",
+      "clash": "clash/peiyingyao/pixiv/pixiv_domain.yaml",
       "surge": "surge/peiyingyao/pixiv/pixiv_domain.list",
       "sing-box": "sing-box/peiyingyao/pixiv/pixiv_domain.json"
     }
@@ -359,7 +359,7 @@
     "kind": "IP",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/netflix/netflix_ip.yaml",
+      "clash": "clash/metacubex/netflix/netflix_ip.yaml",
       "surge": "surge/metacubex/netflix/netflix_ip.list",
       "sing-box": "sing-box/metacubex/netflix/netflix_ip.json"
     }
@@ -370,7 +370,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/netflix/netflix_domain.yaml",
+      "clash": "clash/metacubex/netflix/netflix_domain.yaml",
       "surge": "surge/metacubex/netflix/netflix_domain.list",
       "sing-box": "sing-box/metacubex/netflix/netflix_domain.json"
     }
@@ -381,7 +381,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/disney/disney_domain.yaml",
+      "clash": "clash/metacubex/disney/disney_domain.yaml",
       "surge": "surge/metacubex/disney/disney_domain.list",
       "sing-box": "sing-box/metacubex/disney/disney_domain.json"
     }
@@ -392,7 +392,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/bilibili/bilibili_domain.yaml",
+      "clash": "clash/metacubex/bilibili/bilibili_domain.yaml",
       "surge": "surge/metacubex/bilibili/bilibili_domain.list",
       "sing-box": "sing-box/metacubex/bilibili/bilibili_domain.json"
     }
@@ -403,7 +403,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/spotify/spotify_domain.yaml",
+      "clash": "clash/metacubex/spotify/spotify_domain.yaml",
       "surge": "surge/metacubex/spotify/spotify_domain.list",
       "sing-box": "sing-box/metacubex/spotify/spotify_domain.json"
     }
@@ -414,7 +414,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/dmm/dmm_domain.yaml",
+      "clash": "clash/metacubex/dmm/dmm_domain.yaml",
       "surge": "surge/metacubex/dmm/dmm_domain.list",
       "sing-box": "sing-box/metacubex/dmm/dmm_domain.json"
     }
@@ -425,7 +425,7 @@
     "kind": "IP",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/telegram/telegram_ip.yaml",
+      "clash": "clash/peiyingyao/telegram/telegram_ip.yaml",
       "surge": "surge/peiyingyao/telegram/telegram_ip.list",
       "sing-box": "sing-box/peiyingyao/telegram/telegram_ip.json"
     }
@@ -436,7 +436,7 @@
     "kind": "Domain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/peiyingyao/telegram/telegram_domain.yaml",
+      "clash": "clash/peiyingyao/telegram/telegram_domain.yaml",
       "surge": "surge/peiyingyao/telegram/telegram_domain.list",
       "sing-box": "sing-box/peiyingyao/telegram/telegram_domain.json"
     }
@@ -447,7 +447,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/gfw/gfw_domain.yaml",
+      "clash": "clash/metacubex/gfw/gfw_domain.yaml",
       "surge": "surge/metacubex/gfw/gfw_domain.list",
       "sing-box": "sing-box/metacubex/gfw/gfw_domain.json"
     }
@@ -458,7 +458,7 @@
     "kind": "Process",
     "notices": "licenses/Loyalsoldier/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/loyalsoldier/applications/applications_process.yaml",
+      "clash": "clash/loyalsoldier/applications/applications_process.yaml",
       "surge": "surge/loyalsoldier/applications/applications_process.list",
       "sing-box": "sing-box/loyalsoldier/applications/applications_process.json"
     }
@@ -469,7 +469,7 @@
     "kind": "Domain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "clash": "clash/yaml/metacubex/cn/cn_domain.yaml",
+      "clash": "clash/metacubex/cn/cn_domain.yaml",
       "surge": "surge/metacubex/cn/cn_domain.list",
       "sing-box": "sing-box/metacubex/cn/cn_domain.json"
     }
@@ -874,7 +874,7 @@
     "kind": "MrsDomain",
     "notices": "NOTICE.md",
     "outputs": {
-      "mrs": "clash/mrs/cats-team/adrules/adrules_domain.mrs"
+      "mrs": "clash/cats-team/adrules/adrules_domain.mrs"
     }
   },
   "mrs_private_ip": {
@@ -883,7 +883,7 @@
     "kind": "MrsIP",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/private/private_ip.mrs"
+      "mrs": "clash/metacubex/private/private_ip.mrs"
     }
   },
   "mrs_private_domain": {
@@ -892,7 +892,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/private/private_domain.mrs"
+      "mrs": "clash/metacubex/private/private_domain.mrs"
     }
   },
   "mrs_steam": {
@@ -901,7 +901,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/steam/steam_domain.mrs"
+      "mrs": "clash/peiyingyao/steam/steam_domain.mrs"
     }
   },
   "mrs_copilot_ip": {
@@ -910,7 +910,7 @@
     "kind": "MrsIP",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/copilot/copilot_ip.mrs"
+      "mrs": "clash/peiyingyao/copilot/copilot_ip.mrs"
     }
   },
   "mrs_copilot_domain": {
@@ -919,7 +919,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/copilot/copilot_domain.mrs"
+      "mrs": "clash/peiyingyao/copilot/copilot_domain.mrs"
     }
   },
   "mrs_gemini": {
@@ -928,7 +928,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/google-gemini/google-gemini_domain.mrs"
+      "mrs": "clash/metacubex/google-gemini/google-gemini_domain.mrs"
     }
   },
   "mrs_adobeactivation": {
@@ -937,7 +937,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/adobe-activation/adobe-activation_domain.mrs"
+      "mrs": "clash/metacubex/adobe-activation/adobe-activation_domain.mrs"
     }
   },
   "mrs_googlefcm": {
@@ -946,7 +946,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/googlefcm/googlefcm_domain.mrs"
+      "mrs": "clash/metacubex/googlefcm/googlefcm_domain.mrs"
     }
   },
   "mrs_z-library": {
@@ -955,7 +955,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/z-library/z-library_domain.mrs"
+      "mrs": "clash/metacubex/z-library/z-library_domain.mrs"
     }
   },
   "mrs_linuxdo": {
@@ -964,7 +964,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/linuxdo/linuxdo_domain.mrs"
+      "mrs": "clash/metacubex/linuxdo/linuxdo_domain.mrs"
     }
   },
   "mrs_twitter_ip": {
@@ -973,7 +973,7 @@
     "kind": "MrsIP",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/twitter/twitter_ip.mrs"
+      "mrs": "clash/metacubex/twitter/twitter_ip.mrs"
     }
   },
   "mrs_twitter_domain": {
@@ -982,7 +982,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/twitter/twitter_domain.mrs"
+      "mrs": "clash/metacubex/twitter/twitter_domain.mrs"
     }
   },
   "mrs_github": {
@@ -991,7 +991,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/github/github_domain.mrs"
+      "mrs": "clash/metacubex/github/github_domain.mrs"
     }
   },
   "mrs_gitlab": {
@@ -1000,7 +1000,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/gitlab/gitlab_domain.mrs"
+      "mrs": "clash/metacubex/gitlab/gitlab_domain.mrs"
     }
   },
   "mrs_onedrive": {
@@ -1009,7 +1009,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/onedrive/onedrive_domain.mrs"
+      "mrs": "clash/metacubex/onedrive/onedrive_domain.mrs"
     }
   },
   "mrs_microsoft": {
@@ -1018,7 +1018,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/microsoft/microsoft_domain.mrs"
+      "mrs": "clash/peiyingyao/microsoft/microsoft_domain.mrs"
     }
   },
   "mrs_openai": {
@@ -1027,7 +1027,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/openai/openai_domain.mrs"
+      "mrs": "clash/metacubex/openai/openai_domain.mrs"
     }
   },
   "mrs_anthropic": {
@@ -1036,7 +1036,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/anthropic/anthropic_domain.mrs"
+      "mrs": "clash/metacubex/anthropic/anthropic_domain.mrs"
     }
   },
   "mrs_discord": {
@@ -1045,7 +1045,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/discord/discord_domain.mrs"
+      "mrs": "clash/metacubex/discord/discord_domain.mrs"
     }
   },
   "mrs_aliyun": {
@@ -1054,7 +1054,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/aliyun/aliyun_domain.mrs"
+      "mrs": "clash/metacubex/aliyun/aliyun_domain.mrs"
     }
   },
   "mrs_cloudflare": {
@@ -1063,7 +1063,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/cloudflare/cloudflare_domain.mrs"
+      "mrs": "clash/metacubex/cloudflare/cloudflare_domain.mrs"
     }
   },
   "mrs_docker": {
@@ -1072,7 +1072,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/docker/docker_domain.mrs"
+      "mrs": "clash/metacubex/docker/docker_domain.mrs"
     }
   },
   "mrs_homebrew": {
@@ -1081,7 +1081,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/homebrew/homebrew_domain.mrs"
+      "mrs": "clash/metacubex/homebrew/homebrew_domain.mrs"
     }
   },
   "mrs_python": {
@@ -1090,7 +1090,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/python/python_domain.mrs"
+      "mrs": "clash/metacubex/python/python_domain.mrs"
     }
   },
   "mrs_icloud": {
@@ -1099,7 +1099,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/icloud/icloud_domain.mrs"
+      "mrs": "clash/metacubex/icloud/icloud_domain.mrs"
     }
   },
   "mrs_apple": {
@@ -1108,7 +1108,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/apple/apple_domain.mrs"
+      "mrs": "clash/metacubex/apple/apple_domain.mrs"
     }
   },
   "mrs_youtube": {
@@ -1117,7 +1117,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/youtube/youtube_domain.mrs"
+      "mrs": "clash/metacubex/youtube/youtube_domain.mrs"
     }
   },
   "mrs_google_ip": {
@@ -1126,7 +1126,7 @@
     "kind": "MrsIP",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/google/google_ip.mrs"
+      "mrs": "clash/peiyingyao/google/google_ip.mrs"
     }
   },
   "mrs_google_domain": {
@@ -1135,7 +1135,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/google/google_domain.mrs"
+      "mrs": "clash/peiyingyao/google/google_domain.mrs"
     }
   },
   "mrs_twitch": {
@@ -1144,7 +1144,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/twitch/twitch_domain.mrs"
+      "mrs": "clash/metacubex/twitch/twitch_domain.mrs"
     }
   },
   "mrs_niconico": {
@@ -1153,7 +1153,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/niconico/niconico_domain.mrs"
+      "mrs": "clash/metacubex/niconico/niconico_domain.mrs"
     }
   },
   "mrs_pixiv": {
@@ -1162,7 +1162,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/pixiv/pixiv_domain.mrs"
+      "mrs": "clash/peiyingyao/pixiv/pixiv_domain.mrs"
     }
   },
   "mrs_netflix_ip": {
@@ -1171,7 +1171,7 @@
     "kind": "MrsIP",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/netflix/netflix_ip.mrs"
+      "mrs": "clash/metacubex/netflix/netflix_ip.mrs"
     }
   },
   "mrs_netflix_domain": {
@@ -1180,7 +1180,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/netflix/netflix_domain.mrs"
+      "mrs": "clash/metacubex/netflix/netflix_domain.mrs"
     }
   },
   "mrs_disney": {
@@ -1189,7 +1189,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/disney/disney_domain.mrs"
+      "mrs": "clash/metacubex/disney/disney_domain.mrs"
     }
   },
   "mrs_bilibili": {
@@ -1198,7 +1198,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/bilibili/bilibili_domain.mrs"
+      "mrs": "clash/metacubex/bilibili/bilibili_domain.mrs"
     }
   },
   "mrs_spotify": {
@@ -1207,7 +1207,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/spotify/spotify_domain.mrs"
+      "mrs": "clash/metacubex/spotify/spotify_domain.mrs"
     }
   },
   "mrs_dmm": {
@@ -1216,7 +1216,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/dmm/dmm_domain.mrs"
+      "mrs": "clash/metacubex/dmm/dmm_domain.mrs"
     }
   },
   "mrs_telegram_ip": {
@@ -1225,7 +1225,7 @@
     "kind": "MrsIP",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/telegram/telegram_ip.mrs"
+      "mrs": "clash/peiyingyao/telegram/telegram_ip.mrs"
     }
   },
   "mrs_telegram_domain": {
@@ -1234,7 +1234,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/Rule-for-OCD/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/peiyingyao/telegram/telegram_domain.mrs"
+      "mrs": "clash/peiyingyao/telegram/telegram_domain.mrs"
     }
   },
   "mrs_gfw": {
@@ -1243,7 +1243,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/gfw/gfw_domain.mrs"
+      "mrs": "clash/metacubex/gfw/gfw_domain.mrs"
     }
   },
   "mrs_cn_domain": {
@@ -1252,7 +1252,7 @@
     "kind": "MrsDomain",
     "notices": "licenses/MetaCubeX/LICENSE",
     "outputs": {
-      "mrs": "clash/mrs/metacubex/cn/cn_domain.mrs"
+      "mrs": "clash/metacubex/cn/cn_domain.mrs"
     }
   }
 }
