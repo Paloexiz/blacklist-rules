@@ -2,7 +2,7 @@
 
 **Select your Language: English | [简体中文](README.zh-cn.md)**
 
-You can leave a comment here if you found any problem or have any suggestion.
+Please report problems or share suggestions in this repository's [Issues](https://github.com/Paloexiz/blacklist-rules/issues).
 
 ## Note
 
@@ -12,6 +12,33 @@ This file is mainly designed to proxy these following:
 - Some application service that not available yet at your current region.
 - Due to slow connection of some application service in current Internet provided by your ISP, cannot load all resources successfully for a long time.
 
+## Configuration subscriptions
+
+<table>
+  <tr align="center">
+    <td>
+      <b>TYPE</b>
+    </td>
+    <td>
+      <b>Original links</b>
+    </td>
+    <td>
+      <b>CDN links</b>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="surge_configuration.conf">surge_configuration.conf</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/client_conf/surge_configuration/surge_configuration.conf">CONF</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/client_conf/surge_configuration/surge_configuration.conf">CONF</a>
+    </td>
+  </tr>
+</table>
+
 ## About "Proxy Groups"
 
 - Node selection Groups
@@ -19,6 +46,7 @@ This file is mainly designed to proxy these following:
   - `All Nodes`: You can see all nodes of subscription(s), choose a node (or choose a node in other `[Region] Nodes`).
   - `HK/TW/JP/US/SG/UK Nodes`: You only can see HK/TW/JP/US/SG/UK nodes of subscription(s), choose a node (otherwise, choose a node in `All Nodes` or other `[Region] Nodes`).
   - `Minimum delay`: Automatically choose a node which has a minimum delay in `All Nodes`.
+  - `Fallback`: Uses the first available node in `All Nodes`, following the node order. Automatically switches to another available node if the current one fails.
   - `Load Balancing (Hashing)`: It will assign requests with the same target address to the same proxy node within `All Nodes`.
   - `Load Balancing (Round Robin)`: It will distribute all requests among different proxy nodes within `All Nodes`.
 - Contact

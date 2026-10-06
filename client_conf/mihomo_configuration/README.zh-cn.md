@@ -2,7 +2,7 @@
 
 **语言选择：[English](README.md) | 简体中文**
 
-如果您发现任何问题或有任何建议，可以在这里留言。
+如果发现问题或有改进建议，请在本仓库的 [Issues](https://github.com/Paloexiz/blacklist-rules/issues) 中反馈。
 
 ## 说明
 
@@ -12,6 +12,33 @@
 - 当前所在地区尚不可用的部分应用服务；
 - 由于当前 ISP 提供的互联网连接缓慢，长时间无法完整加载全部资源的部分应用服务。
 
+## 配置订阅
+
+<table>
+  <tr align="center">
+    <td>
+      <b>类型</b>
+    </td>
+    <td>
+      <b>原始链接</b>
+    </td>
+    <td>
+      <b>镜像链接</b>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="mihomo_configuration.yaml">mihomo_configuration.yaml</a>
+    </td>
+    <td>
+      <a href="https://raw.githubusercontent.com/Paloexiz/blacklist-rules/main/client_conf/mihomo_configuration/mihomo_configuration.yaml">YAML</a>
+    </td>
+    <td>
+      <a href="https://fastly.jsdelivr.net/gh/Paloexiz/blacklist-rules@main/client_conf/mihomo_configuration/mihomo_configuration.yaml">YAML</a>
+    </td>
+  </tr>
+</table>
+
 ## 关于“代理组”
 
 - 节点选择组
@@ -19,6 +46,7 @@
   - `All Nodes`：显示订阅中的全部节点，可直接选择节点，也可选择其他 `[Region] Nodes` 中的节点。
   - `HK/TW/JP/US/SG/UK Nodes`：仅显示对应地区的订阅节点；也可在 `All Nodes` 或其他 `[Region] Nodes` 中选择节点。
   - `Minimum delay`：自动选择 `All Nodes` 中延迟最低的节点。
+  - `Fallback`：按节点顺序使用 `All Nodes` 中第一个可用节点；当前节点不可用时，自动切换到其他可用节点。
   - `Load Balancing (Hashing)`：将目标地址相同的请求分配到 `All Nodes` 中的同一代理节点。
   - `Load Balancing (Round Robin)`：将所有请求轮流分配到 `All Nodes` 中的不同代理节点。
 - 通讯
