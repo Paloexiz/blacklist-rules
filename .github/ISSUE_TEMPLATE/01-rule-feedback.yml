@@ -1,0 +1,27 @@
+name: Add a domain or rule
+description: Suggest a missing domain, IP address, or process. No rule file or upstream source is needed.
+title: "[Rule] "
+body:
+  - type: textarea
+    id: affected-targets
+    attributes:
+      label: What should we add?
+      description: A domain name is enough. You can also list IP addresses or process names, one per line.
+      placeholder: |
+        example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: intended-use
+    attributes:
+      label: What would you like it to do? (optional)
+      options:
+        - Use a proxy
+        - Connect directly
+        - Block traffic
+        - Not sure
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else? (optional)
+      description: An app name or a short note is welcome, but not required. Leave out passwords, tokens, and private subscription URLs.

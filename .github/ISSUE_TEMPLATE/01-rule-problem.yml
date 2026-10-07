@@ -1,0 +1,29 @@
+name: Fix or remove a rule
+description: Something is blocked or routed incorrectly, or an existing rule should be removed.
+title: "[Rule] "
+body:
+  - type: input
+    id: affected-target
+    attributes:
+      label: Which website, app, or domain is affected?
+      description: Any one of these is enough. You do not need to know the rule file.
+      placeholder: example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is wrong?
+      options:
+        - Blocked by mistake
+        - Uses a proxy but should connect directly
+        - Connects directly but should use a proxy
+        - The rule is no longer needed
+        - Other or not sure
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else? (optional)
+      description: Add a screenshot or short note if you have one. Leave out passwords, tokens, and private subscription URLs.

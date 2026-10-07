@@ -1,0 +1,27 @@
+name: Bug report
+description: A download, rule file, script, or example configuration is not working.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What happened?
+      options:
+        - A download link does not work
+        - My app cannot load the rules
+        - An example configuration does not work
+        - A script or workflow fails
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: affected-resource
+    attributes:
+      label: Link or file (optional)
+      placeholder: Paste a public URL or file name, if you have one.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Anything else? (optional)
+      description: Add a screenshot, error, or short note if you have one. Leave out passwords, tokens, and private subscription URLs.
